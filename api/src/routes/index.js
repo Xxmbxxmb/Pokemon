@@ -127,7 +127,7 @@ router.post("/pokemons", async (req, res) => {
     if (!name) return res.status(404).send("Faltan datos obligatorios");
 
     let new_poke = await Pokemon.create({
-      nombre: name,
+      nombre: name.toLowerCase(),
       hp,
       attack,
       defense,

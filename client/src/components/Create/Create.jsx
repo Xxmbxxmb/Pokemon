@@ -142,7 +142,6 @@ function Create(props) {
       dispatch(addPokemon(state));
       history.push("/");
       window.location.reload();
-      console.log(state);
     }
   };
 
