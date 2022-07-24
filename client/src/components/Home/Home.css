@@ -162,6 +162,12 @@ ul{
   }
 }
 
+@media (max-height: 600px){
+  ul{
+    font-size: 10px;
+  }
+}
+
 @media (max-width: 720px){
   .pageButton, ul, h3, .abilities_grid{
     font-size: 8.5px;
@@ -303,10 +309,11 @@ ul{
   .selec_general{
     font-size: 8px;
     margin-bottom: 0.5rem;
+    align-self: flex-end;
   }
 }
 
-@media (max-width: 400px){
+@media (max-width: 410px){
   .selec_general{
     font-size: 6px;
     margin-bottom: 0.5rem;

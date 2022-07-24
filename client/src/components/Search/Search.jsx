@@ -35,7 +35,7 @@ export const SearchButton = styled.button`
 export const ImgCrear = styled.img`
 width: 200px;
 position: absolute;
-right: 35px;
+right: 20px;
 cursor: pointer;
 top: 3.5rem;
 
@@ -43,19 +43,27 @@ top: 3.5rem;
   -webkit-transform:scale(1.3);
 }
 
-@media (max-width: 1100px){
-  width: 150px;
+@media (max-width: 970px){
+  width: 160px;
 }
 
-@media (max-width: 800px){
-  width: 100px;
-  right: 20px;
+@media (max-width: 850px){
+  right: 10px;
 }
 
-@media (max-width: 400px){
-  width: 80px;
+@media (max-width: 700px){
+  width: 140px;
+}
+
+@media (max-width: 500px){
+  width: 125px;
+}
+
+
+@media (max-width: 410px){
+  width: 110px;
   right: 6.5px;
-  top: 2.7rem;
+  top: 3.7rem;
 }
 
 `;

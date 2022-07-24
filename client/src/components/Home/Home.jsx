@@ -24,8 +24,16 @@ export const DivXl = styled.div`
     display: none;
   }
 
-  @media (max-height: 800px){
-    height: 350px;
+  @media (max-height: 850px){
+    height: 480px;
+  }
+
+  @media (max-height: 750px){
+    height: 400px;
+  }
+
+  @media (max-height: 650px){
+    height: 300px;
   }
 
   @media (max-width: 500px){
@@ -41,26 +49,28 @@ export const DivFilters = styled.div`
   background-color: transparent;
   margin-top: 1rem;
   display: flex;
-  justify-content: space-evenly;
-  width: 60%;
+  width: 80%;
   height: 40px;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  padding-top: 1rem;
 
   @media (max-width: 800px){
-    width: 70%;
-    height: 20px;
+    padding-top: 0.3rem;
   }
 
   @media (max-width: 670px){
-    align-self: flex-start;
-
+    width: 70%
   }
+
 
 
 `;
 export const DivButton = styled.div`
   background-color: rgba(0, 0, 0, 0.5);
-  margin-top: 3.5rem;
+  margin-top: 2.5rem;
   display: flex;
   justify-content: space-evenly;
   margin-left: 6.7rem;
@@ -85,7 +95,7 @@ export const DivButton = styled.div`
   @media (max-width: 720px){
     margin-left: 4rem;
     height: 20px;
-    margin-top: 4rem;
+    margin-top: 2.5rem;
   }
 
   @media (max-width: 500px){
@@ -94,10 +104,16 @@ export const DivButton = styled.div`
     height: 20px;
   }
 
-  @media (max-width: 400px){
+  @media (max-width: 420px){
     margin-left: 8.5rem;
     margin-top: 3rem;
-    height: 15px;
+    height: 20px;
+  }
+
+  @media (max-width: 360px){
+    margin-left: 7.5rem;
+    margin-top: 3rem;
+    height: 20px;
   }
 
 `;
@@ -115,9 +131,6 @@ export const Contenedor = styled.div`
     width: 70%;
   }
 
-  @media (max-width: 1100px){
-    width:
-  }
 
 `;
 export const ImgPoke = styled.img`
@@ -131,7 +144,13 @@ export const ImgPoke = styled.img`
     max-height: 150px;
     mix-width: 150px;
     max-width: 150px;
+  }
 
+  @media (max-height: 600px){
+    min-height: 100px;
+    max-height: 100px;
+    mix-width: 100px;
+    max-width: 100px;
   }
 
   @media (max-width: 720px){
@@ -228,7 +247,7 @@ const sAtt = (lista) => {
 
 function Home(props) {
   const options = [
-    { value: "", text: "-- Elige un tipo --" },
+    { value: "", text: "-- Ordenar por tipo --" },
     { value: "normal", text: "normal" },
     { value: "fighting", text: "fighting" },
     { value: "flying", text: "flying" },
@@ -458,20 +477,6 @@ function Home(props) {
 
           <select
             className="selec_general"
-            value={selAtt}
-            onChange={(e) => {
-              setAtt(e.target.value);
-              if (e.target.value === "ascendente") sortByAttack();
-              if (e.target.value === "descendente") sortByAttack(true);
-            }}
-          >
-            <option value="">-- Orden por Ataque --</option>
-            <option value="ascendente">Ascendente</option>
-            <option value="descendente">Descendente</option>
-          </select>
-
-          <select
-            className="selec_general"
             value={selOri}
             onChange={(e) => {
               setOri(e.target.value);
@@ -496,6 +501,20 @@ function Home(props) {
                 {opt.text}
               </option>
             ))}
+          </select>
+
+          <select
+            className="selec_general"
+            value={selAtt}
+            onChange={(e) => {
+              setAtt(e.target.value);
+              if (e.target.value === "ascendente") sortByAttack();
+              if (e.target.value === "descendente") sortByAttack(true);
+            }}
+          >
+            <option value="">-- Orden por Ataque --</option>
+            <option value="ascendente">Ascendente</option>
+            <option value="descendente">Descendente</option>
           </select>
         </DivFilters>
         <DivButton>
