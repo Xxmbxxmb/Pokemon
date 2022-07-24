@@ -47,6 +47,17 @@ top: 3.5rem;
   width: 150px;
 }
 
+@media (max-width: 800px){
+  width: 100px;
+  right: 20px;
+}
+
+@media (max-width: 400px){
+  width: 80px;
+  right: 6.5px;
+  top: 2.7rem;
+}
+
 `;
 
 function Search(props) {

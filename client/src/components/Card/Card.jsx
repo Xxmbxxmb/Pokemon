@@ -24,15 +24,15 @@ export const DivCard = styled.div`
     max-width: 175px;
     min-height: 25px;
     max-height: 30px;
-    
   }
 
   @media (max-width: 1100px){
     min-width: 100px;
     max-width: 100px;
     min-height: 15px;
-    max-height: 15px;
+    max-height: 25px;
   }
+
 `;
 
 export const MainTipos = styled.div`

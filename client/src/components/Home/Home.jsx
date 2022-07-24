@@ -24,25 +24,17 @@ export const DivXl = styled.div`
     display: none;
   }
 
-  @media (max-width: 1100px){
-    width: 30%;
-  }
-
-  @media (max-height: 900px){
-    height: 600px;
-  }
-
   @media (max-height: 800px){
-    height: 500px;
+    height: 350px;
   }
 
-  @media (max-height: 700px){
-    height: 400px;
+  @media (max-width: 500px){
+    width: 80%;
+    height: 220px;
+    margin-bottom: 1.2rem;
+    margin-left: 0px;
   }
 
-  @media (max-height: 600px){
-    height: 250px;
-  }
 
 `;
 export const DivFilters = styled.div`
@@ -53,6 +45,16 @@ export const DivFilters = styled.div`
   width: 60%;
   height: 40px;
   flex-wrap: wrap;
+
+  @media (max-width: 800px){
+    width: 70%;
+    height: 20px;
+  }
+
+  @media (max-width: 670px){
+    align-self: flex-start;
+
+  }
 
 
 `;
@@ -70,20 +72,33 @@ export const DivButton = styled.div`
   padding-top: 8px;
   padding-bottom: 5px;
 
-  @media (max-width: 1400px){
-    margin-left: 6rem;
-  }
-
-  @media (max-width: 1225px){
-    margin-left: 5.5rem;
-  }
-
   @media (max-width: 1100px){
-    margin-left: 7rem;
-    width: 23%;
-    align-items: center;
-    justify-content: space-around;
+    margin-left: 5.25rem;
   }
+
+  @media (max-width: 800px){
+    margin-left: 5.25rem;
+    height: 25px;
+  }
+
+  @media (max-width: 720px){
+    margin-left: 4rem;
+    height: 20px;
+    margin-top: 4rem;
+  }
+
+  @media (max-width: 500px){
+    margin-left: 10rem;
+    margin-top: 4rem;
+    height: 20px;
+  }
+
+  @media (max-width: 400px){
+    margin-left: 8.5rem;
+    margin-top: 3rem;
+    height: 15px;
+  }
+
 `;
 export const Contenedor = styled.div`
   width: 70%;
@@ -95,6 +110,14 @@ export const Contenedor = styled.div`
   position: relative;
   padding-top: 1rem;
 
+  @media (max-height: 800px){
+    width: 70%;
+  }
+
+  @media (max-width: 1100px){
+    width:
+  }
+
 `;
 export const ImgPoke = styled.img`
   min-height: 200px;
@@ -102,12 +125,36 @@ export const ImgPoke = styled.img`
   mix-width: 200px;
   max-width: 200px;
 
-  @media (max-height: 700px){
-    min-height: 125px;
-    max-height: 125px;
-    mix-width: 125px;
-    max-width: 125px;
+  @media (max-height: 800px){
+    min-height: 150px;
+    max-height: 150px;
+    mix-width: 150px;
+    max-width: 150px;
+
   }
+
+  @media (max-width: 720px){
+    min-height: 100px;
+    max-height: 100px;
+    mix-width: 100px;
+    max-width: 100px;
+  }
+
+  @media (max-width: 600px){
+    min-height: 80px;
+    max-height: 80px;
+    mix-width: 80px;
+    max-width: 80px;
+  }
+
+  @media (max-width: 400px){
+    min-height: 50px;
+    max-height: 50px;
+    mix-width: 50px;
+    max-width: 50px;
+  }
+
+
 `;
 export const ContenedorTipo = styled.div`
   background-color: ${({ tipo }) => {
@@ -140,6 +187,11 @@ export const ContenedorTipo = styled.div`
   align-items: center;
   padding: 3px;
   font-size: 17px;
+
+  @media (max-width: 700px){
+    font-size: 10px;
+  }
+
 `;
 export const MainTipos = styled.div`
   color: black;
