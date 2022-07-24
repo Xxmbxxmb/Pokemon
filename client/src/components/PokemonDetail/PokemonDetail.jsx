@@ -13,6 +13,22 @@ export const Contenedor = styled.div`
   justify-content: center;
   padding: 25px 15px 25px 15px;
   border-radius: 99px;
+
+  @media (max-width: 1150px){
+    width: 30%;
+  }
+
+  @media (max-width: 950px){
+    width: 40%;
+  }
+
+  @media (max-width: 650px){
+    width: 55%;
+  }
+
+  @media (max-width: 450px){
+    width: 65%;
+  }
 `;
 
 export const ContenedorXl = styled.div`
@@ -41,6 +57,14 @@ export const DivTipos = styled.div`
 width: 100%;
 display: flex;
 justify-content: space-around;
+
+@media (max-width: 950px){
+  width: 80%;
+}
+
+@media (max-width: 650px){
+  width: 75%;
+}
 `
 
 export const ContenedorTipo = styled.div`
@@ -106,7 +130,7 @@ function PokemonDetail(props) {
             <span className="detalle_id">{`#${pokemon_detail.id}`}</span>
           </div>
           <ImgPoke src={`${pokemon_detail.imagen}`} alt="" />
-          <h3 style={{color: 'white'}}>{`${pokemon_detail.nombre[0].toUpperCase()}${pokemon_detail.nombre.slice(1)}`}</h3>
+          <h2 style={{color: 'white'}}>{`${pokemon_detail.nombre[0].toUpperCase()}${pokemon_detail.nombre.slice(1)}`}</h2>
 
             {
                 pokemon_detail.types.length > 1 

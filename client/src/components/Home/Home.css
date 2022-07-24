@@ -34,6 +34,18 @@
   padding-top: 15rem;
 }
 
+@media (max-height: 600px){
+  #loading_gif{
+    padding-top: 10rem;
+  }
+}
+
+@media (max-height: 500px){
+  #loading_gif{
+    padding-top: 5rem;
+  }
+}
+
 .selec_general {
   border-radius: 50px;
   cursor: pointer;

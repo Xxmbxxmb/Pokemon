@@ -64,9 +64,6 @@ export const DivFilters = styled.div`
   @media (max-width: 670px){
     width: 70%
   }
-
-
-
 `;
 export const DivButton = styled.div`
   background-color: rgba(0, 0, 0, 0.5);

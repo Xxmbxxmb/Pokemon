@@ -16,9 +16,9 @@ const ContenedorCreacion = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 4rem;
+  margin-top: 5rem;
   color: white;
-`
+`;
 const Contenedor = styled.div`
   display: flex;
   width: 35%;
@@ -26,8 +26,24 @@ const Contenedor = styled.div`
   align-items: center;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.35);
-  padding: 15px 0px 15px 0px;
+  padding: 2rem 0px 2rem 0px;
   border-radius: 20px;
+
+  @media (max-width: 1100px) {
+    width: 45%;
+  }
+
+  @media (max-width: 850px) {
+    width: 60%;
+  }
+
+  @media (max-width: 600px) {
+    width: 75%;
+  }
+
+  @media (max-width: 400px) {
+    width: 85%;
+  }
 `;
 const ContenedorTipos = styled.div`
   display: flex;
@@ -121,7 +137,7 @@ function Create(props) {
     } else {
       dispatch(addPokemon(state));
       history.push("/");
-      window.location.reload()
+      window.location.reload();
       console.log(state);
     }
   };
@@ -133,6 +149,7 @@ function Create(props) {
         <InputForm onSubmit={(e) => validarFormulario(e)}>
           <label htmlFor="">Nombre</label>
           <input
+            className="inputForm"
             type="text"
             name="name"
             id="name"
@@ -140,6 +157,7 @@ function Create(props) {
           />
           <label htmlFor="">Ataque</label>
           <input
+            className="inputForm"
             type="text"
             name="attack"
             id="attack"
@@ -147,6 +165,7 @@ function Create(props) {
           />
           <label htmlFor="">Defensa</label>
           <input
+            className="inputForm"
             type="text"
             name="defense"
             id="defense"
@@ -154,6 +173,7 @@ function Create(props) {
           />
           <label htmlFor="">Velocidad</label>
           <input
+            className="inputForm"
             type="text"
             name="speed"
             id="speed"
@@ -161,6 +181,7 @@ function Create(props) {
           />
           <label htmlFor="">HP</label>
           <input
+            className="inputForm"
             type="text"
             name="hp"
             id="hp"
@@ -168,6 +189,7 @@ function Create(props) {
           />
           <label htmlFor="">Altura</label>
           <input
+            className="inputForm"
             type="text"
             name="height"
             id="height"
@@ -175,6 +197,7 @@ function Create(props) {
           />
           <label htmlFor="">Peso</label>
           <input
+            className="inputForm"
             type="text"
             name="weight"
             id="weight"
@@ -182,6 +205,7 @@ function Create(props) {
           />
           <label htmlFor="">Imagen</label>
           <input
+            className="inputForm"
             type="text"
             name="imagen"
             id="imagen"
@@ -189,7 +213,11 @@ function Create(props) {
           />
 
           <label htmlFor="">Tipos</label>
-          <select defaultValue={9999} name="types" onChange={(e) => handleOptions(e)}>
+          <select
+            defaultValue={9999}
+            name="types"
+            onChange={(e) => handleOptions(e)}
+          >
             <option disabled value="9999">
               Escoger
             </option>
@@ -215,7 +243,9 @@ function Create(props) {
             <option value="20">shadow</option>
           </select>
 
-          <button type="submit" onClick={() => window.location.reload()}>ACEPTAR</button>
+          <button type="submit" onClick={() => window.location.reload()}>
+            ACEPTAR
+          </button>
 
           {state.types.length === 0 ? null : (
             <div>
@@ -239,30 +269,30 @@ function Create(props) {
                   <div>
                     <span>{state.types[0]}</span>
                     <button
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setState({
-                        ...state,
-                        types: [state.types[1]]
-                      });
-                    }}
-                  >
-                    X
-                  </button>
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setState({
+                          ...state,
+                          types: [state.types[1]],
+                        });
+                      }}
+                    >
+                      X
+                    </button>
                   </div>
                   <div>
                     <span>{state.types[1]}</span>
                     <button
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setState({
-                        ...state,
-                        types: [state.types[0]],
-                      });
-                    }}
-                  >
-                    X
-                  </button>
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setState({
+                          ...state,
+                          types: [state.types[0]],
+                        });
+                      }}
+                    >
+                      X
+                    </button>
                   </div>
                 </ContenedorTipos>
               )}

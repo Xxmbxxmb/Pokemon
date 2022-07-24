@@ -20,3 +20,15 @@ p{
     
 }
 
+@media (max-width: 1100px){
+    .detalle_id{
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 1100px){
+    .detalle_id{
+        font-size: 20px;
+    }
+}
+
