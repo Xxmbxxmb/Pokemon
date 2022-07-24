@@ -474,18 +474,16 @@ function Home(props) {
 
           <select
             className="selec_general"
-            value={selOri}
+            value={selAtt}
             onChange={(e) => {
-              setOri(e.target.value);
-              if (e.target.value === "originales") sortOriginals();
-              if (e.target.value === "creados") sortCreated();
-              if(e.target.value === 'todos') sortTodos();
+              setAtt(e.target.value);
+              if (e.target.value === "ascendente") sortByAttack();
+              if (e.target.value === "descendente") sortByAttack(true);
             }}
           >
-            <option value="">-- Orden por Origen --</option>
-            <option value="todos">Todos</option>
-            <option value="originales">Originales</option>
-            <option value="creados">Creados</option>
+            <option value="">-- Orden por Ataque --</option>
+            <option value="ascendente">Ascendente</option>
+            <option value="descendente">Descendente</option>
           </select>
 
           <select
@@ -502,16 +500,18 @@ function Home(props) {
 
           <select
             className="selec_general"
-            value={selAtt}
+            value={selOri}
             onChange={(e) => {
-              setAtt(e.target.value);
-              if (e.target.value === "ascendente") sortByAttack();
-              if (e.target.value === "descendente") sortByAttack(true);
+              setOri(e.target.value);
+              if (e.target.value === "originales") sortOriginals();
+              if (e.target.value === "creados") sortCreated();
+              if(e.target.value === 'todos') sortTodos();
             }}
           >
-            <option value="">-- Orden por Ataque --</option>
-            <option value="ascendente">Ascendente</option>
-            <option value="descendente">Descendente</option>
+            <option value="">-- Orden por Origen --</option>
+            <option value="todos">Todos</option>
+            <option value="originales">Originales</option>
+            <option value="creados">Creados</option>
           </select>
         </DivFilters>
         <DivButton>
