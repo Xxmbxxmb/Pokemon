@@ -73,39 +73,9 @@ function Create(props) {
   const validarCampos = (state) => {
     let errores = {};
     if (!state.name) {
-      errores.name = "Nombre es un campo obligatorio";
+      errores.name = "Usuario es un campo obligatorio";
     } else if (/(?=.*[0-9])/.test(state.name)) {
-      errores.name = "Nombre no puede contener numeros";
-    }
-    if (!state.hp) {
-      errores.hp = "Vida es un campo obligatorio";
-    } else if (/(?=.*[A-Z])\w+/gi.test(state.hp)) {
-      errores.hp = "Vida no puede contener numeros";
-    }
-    if (!state.attack) {
-      errores.attack = "Ataque es un campo obligatorio";
-    } else if (/(?=.*[A-Z])\w+/gi.test(state.attack)) {
-      errores.attack = "Ataque no puede contener numeros";
-    }
-    if (!state.defense) {
-      errores.defense = "Defensa es un campo obligatorio";
-    } else if (/(?=.*[A-Z])\w+/gi.test(state.defense)) {
-      errores.defense = "Defensa no puede contener numeros";
-    }
-    if (!state.speed) {
-      errores.speed = "Velocidad es un campo obligatorio";
-    } else if (/(?=.*[A-Z])\w+/gi.test(state.speed)) {
-      errores.speed = "Velocidad no puede contener numeros";
-    }
-    if (!state.height) {
-      errores.height = "Altura es un campo obligatorio";
-    } else if (/(?=.*[A-Z])\w+/gi.test(state.height)) {
-      errores.height = "Altura no puede contener numeros";
-    }
-    if (!state.weight) {
-      errores.weight = "Peso es un campo obligatorio";
-    } else if (/(?=.*[A-Z])\w+/gi.test(state.weight)) {
-      errores.weight = "Peso no puede contener numeros";
+      errores.name = "Usuario no puede contener numeros";
     }
     return errores;
   };
@@ -137,81 +107,57 @@ function Create(props) {
   const validarFormulario = (e) => {
     e.preventDefault();
     if (Object.keys(validarCampos(state)) !== 0) {
-      if(errores.name) {
-        alert(errores.name)
-        return;
-      } else if(errores.attack){
-        alert(errores.attack)
-        return;
-      } else if(errores.defense){
-        alert(errores.defense)
-        return;
-      } else if(errores.speed){
-        alert(errores.speed)
-        return;
-      } else if(errores.hp){
-        alert(errores.hp)
-        return;
-      } else if(errores.height){
-        alert(errores.height)
-        return;
-      } else if(errores.weight){
-        alert(errores.weight)
-        return;
-      }
-      console.log(errores)
-    }
-    let nombre = document.querySelector("#name").value;
-    let attack = document.querySelector("#attack").value;
-    let defense = document.querySelector("#defense").value;
-    let speed = document.querySelector("#speed").value;
-    let hp = document.querySelector("#hp").value;
-    let height = document.querySelector("#height").value;
-    let weight = document.querySelector("#weight").value;
-    if(nombre.length === 0){
       alert(
-        "Nombre es un dato obligatorio, porfavor llena el formulario correctamente."
+        errores.name
       )
-      return
-    } else if (attack.length === 0) {
-      alert(
-        "Ataque es un dato obligatorio, porfavor llena el formulario correctamente"
-      );
-      return;
-    } else if (defense.length === 0) {
-      alert(
-        "Defensa es un dato obligatorio, porfavor llena el formulario correctamente"
-      );
-      return;
-    } else if (speed.length === 0) {
-      alert(
-        "Velocidad es un dato obligatorio, porfavor llena el formulario correctamente"
-      );
-      return;
-    } else if (hp.length === 0) {
-      alert(
-        "Vida es un dato obligatorio, porfavor llena el formulario correctamente"
-      );
-      return;
-    } else if (height.length === 0) {
-      alert(
-        "Altura es un dato obligatorio, porfavor llena el formulario correctamente"
-      );
-      return;
-    } else if (weight.length === 0) {
-      alert(
-        "Peso es un dato obligatorio, porfavor llena el formulario correctamente"
-      );
-      return;
-    } else if (state.types.length === 0) {
-      alert(
-        "El tipo es un dato obligatorio, porfavor llena el formulario correctamente"
-      );
-      return;
     } else {
-      dispatch(addPokemon(state));
-      history.push("/");
-      setTimeout(() => window.location.reload(), 1500);
+      let nombre = document.querySelector("#name").value;
+      let attack = document.querySelector("#attack").value;
+      let defense = document.querySelector("#defense").value;
+      let speed = document.querySelector("#speed").value;
+      let hp = document.querySelector("#hp").value;
+      let height = document.querySelector("#height").value;
+      let weight = document.querySelector("#weight").value;
+      if (attack.length === 0) {
+        alert(
+          "Faltan datos obligatorios, porfavor llena el formulario correctamente"
+        );
+        return;
+      } else if (defense.length === 0) {
+        alert(
+          "Faltan datos obligatorios, porfavor llena el formulario correctamente"
+        );
+        return;
+      } else if (speed.length === 0) {
+        alert(
+          "Faltan datos obligatorios, porfavor llena el formulario correctamente"
+        );
+        return;
+      } else if (hp.length === 0) {
+        alert(
+          "Faltan datos obligatorios, porfavor llena el formulario correctamente"
+        );
+        return;
+      } else if (height.length === 0) {
+        alert(
+          "Faltan datos obligatorios, porfavor llena el formulario correctamente"
+        );
+        return;
+      } else if (weight.length === 0) {
+        alert(
+          "Faltan datos obligatorios, porfavor llena el formulario correctamente"
+        );
+        return;
+      } else if (state.types.length === 0) {
+        alert(
+          "Faltan datos obligatorios, porfavor llena el formulario correctamente"
+        );
+        return;
+      } else {
+        dispatch(addPokemon(state));
+        history.push("/");
+        setTimeout(() => window.location.reload(), 1500);
+      }
     }
   };
 

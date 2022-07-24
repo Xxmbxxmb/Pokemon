@@ -135,7 +135,7 @@ router.post("/pokemons", async (req, res) => {
       height,
       weight,
       types: types.slice(0,2),
-      imagen,
+      imagen: imagen === '' ? 'https://www.thequiz.com/wordpress/wp-content/uploads/2017/12/Featured-Whos-That-Pokemon.jpg' : imagen,
     });
 
     return res.status(200).send(new_poke);
