@@ -137,6 +137,7 @@ function Create(props) {
     } else {
       dispatch(addPokemon(state));
       history.push("/");
+      setTimeout(()=> window.location.reload(), 1500)
     }
   };
 
