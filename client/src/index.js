@@ -10,7 +10,7 @@ import store from "./store/index";
 import dotenv from 'dotenv';
 dotenv.config()
 
-axios.defaults.baseURL = process.env.REACT_APP_API || "https://pi-poke.herokuapp.com"
+axios.defaults.baseURL = process.env.REACT_APP_API || "https://pi-poke.herokuapp.com";
 
 ReactDOM.render(
   <Provider store={store}>

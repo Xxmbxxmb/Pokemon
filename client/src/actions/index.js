@@ -7,7 +7,7 @@ export const CREATE_POKEMON = "CREATE_POKEMON";
 
 export function getPokemons() {
   return function (dispatch) {
-    return axios.get("http://localhost:3001/pokemons")
+    return axios.get("/pokemons")
       .then((request) => request.data)
       .then((data) => {
         dispatch({
