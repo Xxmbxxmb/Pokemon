@@ -137,7 +137,6 @@ function Create(props) {
     } else {
       dispatch(addPokemon(state));
       history.push("/");
-      window.location.reload();
     }
   };
 
@@ -242,7 +241,7 @@ function Create(props) {
             <option value="20">shadow</option>
           </select>
 
-          <button type="submit" onClick={() => window.location.reload()}>
+          <button type="submit">
             ACEPTAR
           </button>
 
