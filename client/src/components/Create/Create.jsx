@@ -242,7 +242,7 @@ function Create(props) {
             <option value="20">shadow</option>
           </select>
 
-          <button type="submit" onClick={(e) => validarFormulario(e)}>
+          <button type="submit" onClick={() => window.location.reload()}>
             ACEPTAR
           </button>
 
