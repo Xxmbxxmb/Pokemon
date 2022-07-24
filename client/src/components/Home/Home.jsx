@@ -60,7 +60,7 @@ export const DivFilters = styled.div`
 `;
 export const DivButton = styled.div`
   background-color: rgba(0, 0, 0, 0.5);
-  margin-top: 1rem;
+  margin-top: 3.5rem;
   display: flex;
   justify-content: space-evenly;
   margin-left: 6.7rem;
@@ -74,6 +74,7 @@ export const DivButton = styled.div`
 
   @media (max-width: 1100px){
     margin-left: 5.25rem;
+    height: 25px;
   }
 
   @media (max-width: 800px){
@@ -147,11 +148,11 @@ export const ImgPoke = styled.img`
     max-width: 80px;
   }
 
-  @media (max-width: 400px){
-    min-height: 50px;
-    max-height: 50px;
-    mix-width: 50px;
-    max-width: 50px;
+  @media (max-width: 450px){
+    min-height: 60px;
+    max-height: 60px;
+    mix-width: 60px;
+    max-width: 60px;
   }
 
 
@@ -192,6 +193,11 @@ export const ContenedorTipo = styled.div`
     font-size: 10px;
   }
 
+  @media (max-width: 400px){
+    font-size: 7px;
+    width: 25%;
+  }
+
 `;
 export const MainTipos = styled.div`
   color: black;
@@ -199,6 +205,7 @@ export const MainTipos = styled.div`
   justify-content: space-around;
   align-items: center;
   width: 200px;
+  
 `;
 
 const ITEMS_PAGINA = 12;

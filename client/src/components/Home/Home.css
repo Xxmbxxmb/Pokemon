@@ -41,6 +41,7 @@
   margin-left: 15px;
   margin-right: 15px;
   padding: 3.5px;
+  margin-bottom: 1rem;
 }
 
 .pageButton {
@@ -80,6 +81,19 @@
   align-items: center;
   width: 150px;
 }
+
+@media (max-width: 450px){
+  .tipo_detalle{
+    width: 100px;
+  }
+}
+
+@media (max-width: 400px){
+  .tipo_detalle{
+    width: 80px;
+  }
+}
+
 
 .hp_img {
   position: absolute;
@@ -144,7 +158,7 @@ ul{
 
 @media (max-height: 800px){
   ul{
-    font-size: 10px;
+    font-size: 13px;
   }
 }
 
@@ -158,9 +172,21 @@ ul{
   }
 }
 
+
 @media (max-width: 400px){
-  .pageButton, ul, h3, .abilities_grid{
+  .pageButton, .abilities_grid{
     font-size: 7px;
+    padding: 0px 2px 0px 2px;
+    grid-column-gap: 5px;
+    text-align: center;
+    list-style: none;
+  }
+}
+
+
+@media (max-width: 400px){
+  h3{
+    font-size: 12px;
     padding: 0px 2px 0px 2px;
     grid-column-gap: 5px;
     text-align: center;
@@ -269,6 +295,14 @@ ul{
 @media (max-width: 800px){
   .selec_general, .pageButton{
     font-size: 7px;
+    margin-bottom: 3.5px;
+  }
+}
+
+@media (max-width: 500px){
+  .selec_general{
+    font-size: 8px;
+    margin-bottom: 0.5rem;
   }
 }
 

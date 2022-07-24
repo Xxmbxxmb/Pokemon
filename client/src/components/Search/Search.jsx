@@ -105,6 +105,7 @@ function Search(props) {
             value={input}
             placeholder='Ingresa el nombre de algun pokemon...'
             onChange={(e) => handleChange(e)}
+            autoComplete='off'
           />
           <SearchButton type="submit"><img id="lupaBusqueda" src="https://cdn.icon-icons.com/icons2/2469/PNG/512/magnifier_magnifying_glass_icon_149435.png" alt="" /></SearchButton>
         </SearchForm>
