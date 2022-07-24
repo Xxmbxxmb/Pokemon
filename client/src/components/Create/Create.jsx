@@ -135,10 +135,6 @@ function Create(props) {
       );
       return;
     } else {
-      setState({
-        ...state,
-        name: state.name.toLowerCase()
-      })
       dispatch(addPokemon(state));
       history.push("/");
       window.location.reload();
@@ -246,7 +242,7 @@ function Create(props) {
             <option value="20">shadow</option>
           </select>
 
-          <button type="submit" onClick={() => window.location.reload()}>
+          <button type="submit" onClick={(e) => validarFormulario(e)}>
             ACEPTAR
           </button>
 
