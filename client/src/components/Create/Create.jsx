@@ -80,32 +80,32 @@ function Create(props) {
     if (!state.hp) {
       errores.hp = "Vida es un campo obligatorio";
     } else if (/(?=.*[A-Z])\w+/gi.test(state.hp)) {
-      errores.hp = "Vida no puede contener numeros";
+      errores.hp = "Vida solamente puede contener numeros";
     }
     if (!state.attack) {
       errores.attack = "Ataque es un campo obligatorio";
     } else if (/(?=.*[A-Z])\w+/gi.test(state.attack)) {
-      errores.attack = "Ataque no puede contener numeros";
+      errores.attack = "Ataque solamente puede contener numeros";
     }
     if (!state.defense) {
       errores.defense = "Defensa es un campo obligatorio";
     } else if (/(?=.*[A-Z])\w+/gi.test(state.defense)) {
-      errores.defense = "Defensa no puede contener numeros";
+      errores.defense = "Defensa solamente puede contener numeros";
     }
     if (!state.speed) {
       errores.speed = "Velocidad es un campo obligatorio";
     } else if (/(?=.*[A-Z])\w+/gi.test(state.speed)) {
-      errores.speed = "Velocidad no puede contener numeros";
+      errores.speed = "Velocidad solamente puede contener numeros";
     }
     if (!state.height) {
       errores.height = "Altura es un campo obligatorio";
     } else if (/(?=.*[A-Z])\w+/gi.test(state.height)) {
-      errores.height = "Altura no puede contener numeros";
+      errores.height = "Altura solamente puede contener numeros";
     }
     if (!state.weight) {
       errores.weight = "Peso es un campo obligatorio";
     } else if (/(?=.*[A-Z])\w+/gi.test(state.weight)) {
-      errores.weight = "Peso no puede contener numeros";
+      errores.weight = "Peso solamente puede contener numeros";
     }
     return errores;
   };
