@@ -135,6 +135,10 @@ function Create(props) {
       );
       return;
     } else {
+      setState({
+        ...state,
+        name: state.name.toLowerCase()
+      })
       dispatch(addPokemon(state));
       history.push("/");
       window.location.reload();
