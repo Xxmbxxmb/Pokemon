@@ -1,0 +1,22 @@
+.icons{
+    width: 20px;
+    align-self: center;
+    margin-left: 0.5rem;
+
+}
+
+p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.detalle_id{
+    display: block;
+    color: white;
+    margin-bottom: 10px;
+    text-align: center;
+    
+}
+

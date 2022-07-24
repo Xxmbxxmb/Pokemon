@@ -1,0 +1,89 @@
+#contenedorFiltros {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+#div_load {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: absolute;
+  left: 4rem;
+}
+
+#loading_gif {
+  width: 300px;
+  padding-top: 15rem;
+}
+
+.selec_general {
+  border-radius: 7px;
+  cursor: pointer;
+  border-color: transparent;
+  margin-left: 15px;
+  margin-right: 15px;
+  padding: 3.5px;
+}
+
+.pageButton {
+  padding: 5px;
+  border-radius: 7px;
+  border-color: transparent;
+  margin-left: 15px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+#try {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1rem;
+}
+
+#pokedetail {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tipo_detalle {
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 150px;
+}
+
+.hp_img {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  height: 40px;
+  z-index: 0;
+}
+
+.detalle_hp {
+  position: absolute;
+  top: 12.5px;
+  left: 20px;
+  z-index: 1;
+}
+
+.img_att {
+  position: absolute;
+  top: 55px;
+  left: 15px;
+  height: 30px;
+  z-index: 0;
+}
+
+.abilities_grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 25px;
+  grid-row-gap: 5px;
+}
