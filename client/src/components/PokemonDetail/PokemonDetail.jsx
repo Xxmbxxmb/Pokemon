@@ -5,14 +5,14 @@ import { getDetailsbyDB, getDetailsbyId } from "../../actions";
 import './PokemonDetail.css'
 
 export const Contenedor = styled.div`
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(255, 255, 255, 0.8);
   width: 20%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 25px 15px 25px 15px;
-  border-radius: 99px;
+  border-radius: 25px;
 
   @media (max-width: 1150px){
     width: 30%;
@@ -130,7 +130,7 @@ function PokemonDetail(props) {
             <span className="detalle_id">{`#${pokemon_detail.id}`}</span>
           </div>
           <ImgPoke src={`${pokemon_detail.imagen}`} alt="" />
-          <h2 style={{color: 'white'}}>{`${pokemon_detail.nombre[0].toUpperCase()}${pokemon_detail.nombre.slice(1)}`}</h2>
+          <h2 style={{color: 'black'}}>{`${pokemon_detail.nombre[0].toUpperCase()}${pokemon_detail.nombre.slice(1)}`}</h2>
 
             {
                 pokemon_detail.types.length > 1 

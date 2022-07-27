@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getFilterPaginado, getPokemons } from "../../actions";
 import Card from "../Card/Card";
 import styled from "styled-components";
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 import "./Home.css";
 
 export const DivXl = styled.div`
@@ -17,33 +17,31 @@ export const DivXl = styled.div`
   overflow-y: scroll;
   height: 600px;
   background-color: rgba(0, 0, 0, 0.5);
-  padding: 10px;
+  padding: 20px 10px 10px 10px;
   border-radius: 10px;
 
   &::-webkit-scrollbar {
     display: none;
   }
 
-  @media (max-height: 850px){
+  @media (max-height: 850px) {
     height: 480px;
   }
 
-  @media (max-height: 750px){
+  @media (max-height: 750px) {
     height: 400px;
   }
 
-  @media (max-height: 650px){
+  @media (max-height: 650px) {
     height: 300px;
   }
 
-  @media (max-width: 500px){
+  @media (max-width: 500px) {
     width: 80%;
     height: 220px;
     margin-bottom: 1.2rem;
     margin-left: 0px;
   }
-
-
 `;
 export const DivFilters = styled.div`
   background-color: transparent;
@@ -54,15 +52,21 @@ export const DivFilters = styled.div`
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  align-self: flex-start;
+  align-self: center;
   padding-top: 1rem;
 
-  @media (max-width: 800px){
+  @media (max-width: 1150px) {
+    padding-top: 1rem;
+    width: 65%;
+  }
+
+  @media (max-width: 800px) {
     padding-top: 0.3rem;
   }
 
-  @media (max-width: 670px){
-    width: 70%
+  @media (max-width: 700px) {
+    align-self: flex-start;
+    width: 70%;
   }
 `;
 export const DivButton = styled.div`
@@ -79,40 +83,39 @@ export const DivButton = styled.div`
   padding-top: 8px;
   padding-bottom: 5px;
 
-  @media (max-width: 1100px){
+  @media (max-width: 1100px) {
     margin-left: 5.25rem;
     height: 25px;
   }
 
-  @media (max-width: 800px){
+  @media (max-width: 800px) {
     margin-left: 5.25rem;
     height: 25px;
   }
 
-  @media (max-width: 720px){
+  @media (max-width: 720px) {
     margin-left: 4rem;
     height: 20px;
     margin-top: 2.5rem;
   }
 
-  @media (max-width: 500px){
+  @media (max-width: 500px) {
     margin-left: 10rem;
     margin-top: 4rem;
     height: 20px;
   }
 
-  @media (max-width: 420px){
+  @media (max-width: 420px) {
     margin-left: 8.5rem;
     margin-top: 3rem;
     height: 20px;
   }
 
-  @media (max-width: 360px){
+  @media (max-width: 360px) {
     margin-left: 7.5rem;
     margin-top: 3rem;
     height: 20px;
   }
-
 `;
 export const Contenedor = styled.div`
   width: 70%;
@@ -120,15 +123,13 @@ export const Contenedor = styled.div`
   flex-direction: column;
   align-items: center;
   border-radius: 10px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(255, 255, 255, 0.8);
   position: relative;
   padding-top: 1rem;
 
-  @media (max-height: 800px){
+  @media (max-height: 800px) {
     width: 70%;
   }
-
-
 `;
 export const ImgPoke = styled.img`
   min-height: 200px;
@@ -136,42 +137,47 @@ export const ImgPoke = styled.img`
   mix-width: 200px;
   max-width: 200px;
 
-  @media (max-height: 800px){
+  @media (max-height: 800px) {
     min-height: 150px;
     max-height: 150px;
     mix-width: 150px;
     max-width: 150px;
   }
 
-  @media (max-height: 600px){
+  @media (max-height: 600px) {
+    min-height: 100px;
+    max-height: 100px;
+    mix-width: 100px;
+    max-width: 100px;
+  }
+  
+  @media (max-width: 800px) {
+    min-height: 95px;
+    max-height: 95px;
+    mix-width: 95px;
+    max-width: 95px;
+  }
+
+  @media (max-width: 720px) {
     min-height: 100px;
     max-height: 100px;
     mix-width: 100px;
     max-width: 100px;
   }
 
-  @media (max-width: 720px){
-    min-height: 100px;
-    max-height: 100px;
-    mix-width: 100px;
-    max-width: 100px;
-  }
-
-  @media (max-width: 600px){
+  @media (max-width: 600px) {
     min-height: 80px;
     max-height: 80px;
     mix-width: 80px;
     max-width: 80px;
   }
 
-  @media (max-width: 450px){
+  @media (max-width: 450px) {
     min-height: 60px;
     max-height: 60px;
     mix-width: 60px;
     max-width: 60px;
   }
-
-
 `;
 export const ContenedorTipo = styled.div`
   background-color: ${({ tipo }) => {
@@ -205,15 +211,14 @@ export const ContenedorTipo = styled.div`
   padding: 3px;
   font-size: 17px;
 
-  @media (max-width: 700px){
+  @media (max-width: 700px) {
     font-size: 10px;
   }
 
-  @media (max-width: 400px){
+  @media (max-width: 400px) {
     font-size: 7px;
     width: 25%;
   }
-
 `;
 export const MainTipos = styled.div`
   color: black;
@@ -221,7 +226,6 @@ export const MainTipos = styled.div`
   justify-content: space-around;
   align-items: center;
   width: 200px;
-  
 `;
 
 const ITEMS_PAGINA = 12;
@@ -289,12 +293,12 @@ function Home(props) {
   let detalle = useSelector((state) => state.pokemon_detail);
 
   useEffect(() => {
-    if(pokemones.length === 0) dispatch(getPokemons());
+    if (pokemones.length === 0) dispatch(getPokemons());
   }, [pokemones, items, dispatch]);
 
   const nextHandler = () => {
     let lista = [...asdf];
-    if ((lista.length === 0 && !filterCreados && !filterOriginales))
+    if (lista.length === 0 && !filterCreados && !filterOriginales)
       lista = [...pokemones];
     if (lista.length === 0 && filterOriginales) lista = [...poke_originales];
     if (lista.length === 0 && filterCreados) lista = [...creados];
@@ -447,7 +451,7 @@ function Home(props) {
     setFilterOriginales(false);
     setFilterCreados(false);
     let lista = [...pokemones];
-    
+
     dispatch(getFilterPaginado([]));
     setItems([...lista].splice(0, ITEMS_PAGINA));
     setCurrentPage(0);
@@ -505,7 +509,7 @@ function Home(props) {
               setOri(e.target.value);
               if (e.target.value === "originales") sortOriginals();
               if (e.target.value === "creados") sortCreated();
-              if(e.target.value === 'todos') sortTodos();
+              if (e.target.value === "todos") sortTodos();
             }}
           >
             <option value="">-- Orden por Origen --</option>
@@ -518,7 +522,10 @@ function Home(props) {
           <button className="pageButton" onClick={prevHandler}>
             ANTERIOR
           </button>
-          <button className="pageButton" onClick={() => window.location.reload()}>
+          <button
+            className="pageButton"
+            onClick={() => window.location.reload()}
+          >
             INICIO
           </button>
           <button className="pageButton" onClick={nextHandler}>
@@ -545,7 +552,9 @@ function Home(props) {
                   key={index}
                   name={pokemon.nombre}
                   hp={pokemon.hp}
-                  imagen={pokemon.imagenStatic ? pokemon.imagenStatic : pokemon.imagen}
+                  imagen={
+                    pokemon.imagenStatic ? pokemon.imagenStatic : pokemon.imagen
+                  }
                   defense={pokemon.defense}
                   attack={pokemon.attack}
                   types={pokemon.types}
@@ -560,19 +569,25 @@ function Home(props) {
           {Object.keys(detalle).length !== 0 ? (
             <Contenedor>
               <div>
-                <span className="detalle_hp">{detalle.hp}</span>
+                <span className="detalle_hp">
+                  {detalle.hp}
+                </span>
                 <img
                   className="hp_img"
                   src="https://i.imgur.com/cNRQUhr.png"
                   alt="hp"
                 />
-                <span className="detalle_att">{detalle.attack}</span>
+                <span className="detalle_att">
+                  {detalle.attack}
+                </span>
                 <img
                   src="https://icon-library.com/images/attack-icon/attack-icon-28.jpg"
                   alt="att"
                   className="img_att"
                 />
-                <span className="detalle_def">{detalle.defense}</span>
+                <span className="detalle_def">
+                  {detalle.defense}
+                </span>
                 <img
                   // src="https://cdn2.iconfinder.com/data/icons/rpg-basic-set-2/512/defense-512.png"
                   src="https://icon-library.com/images/defend-icon/defend-icon-21.jpg"
@@ -580,10 +595,19 @@ function Home(props) {
                   className="img_def"
                 />
               </div>
-              <Link to={`/pokemon/${detalle.id}`}><ImgPoke src={`${detalle.imagen}`} alt="" /></Link>
-              <Link style={{textDecoration: 'none'}} to={`/pokemon/${detalle.id}`}><h3 style={{color: "white"}}>{`${detalle.nombre[0].toUpperCase()}${detalle.nombre.slice(
-                1
-              )}`}</h3></Link>
+              <Link to={`/pokemon/${detalle.id}`}>
+                <ImgPoke src={`${detalle.imagen}`} alt="" />
+              </Link>
+              <Link
+                style={{ textDecoration: "none" }}
+                to={`/pokemon/${detalle.id}`}
+              >
+                <h3
+                  style={{ color: "black" }}
+                >{`${detalle.nombre[0].toUpperCase()}${detalle.nombre.slice(
+                  1
+                )}`}</h3>
+              </Link>
 
               {detalle.types.length > 1 ? (
                 <div>
@@ -606,15 +630,17 @@ function Home(props) {
               )}
 
               <div className="abilities_grid">
-              { detalle.abilities ? 
-              detalle.abilities.map((ab, index) => {
-                  return (
-                    <ul key={`${index}${ab}`}>
-                      <li>{`Habilidad N°${index + 1}: ${ab.toUpperCase()}`}</li>
-                    </ul>
-                  );
-                }) : null
-              }
+                {detalle.abilities
+                  ? detalle.abilities.map((ab, index) => {
+                      return (
+                        <ul key={`${index}${ab}`}>
+                          <li>{`Habilidad N°${
+                            index + 1
+                          }: ${ab.toUpperCase()}`}</li>
+                        </ul>
+                      );
+                    })
+                  : null}
               </div>
             </Contenedor>
           ) : null}

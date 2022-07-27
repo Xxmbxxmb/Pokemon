@@ -74,7 +74,7 @@
 
 #try {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
 
@@ -120,7 +120,7 @@
   top: 13px;
   left: 45px;
   z-index: 1;
-  color: white;
+  color: black;
 }
 
 .img_att {
@@ -136,7 +136,7 @@
   top: 48px;
   left: 45px;
   z-index: 1;
-  color: white;
+  color: black;
 }
 
 .img_def {
@@ -152,7 +152,7 @@
   top: 84px;
   left: 45px;
   z-index: 1;
-  color: white;
+  color: black;
 }
 
 .abilities_grid {
@@ -164,7 +164,7 @@
 }
 
 ul{
-  color:white;
+  color:black;
   padding-right: 40px;
 }
 
@@ -177,6 +177,15 @@ ul{
 @media (max-height: 600px){
   ul{
     font-size: 10px;
+  }
+}
+
+@media (max-width: 800px){
+  .pageButton, ul, h3, .abilities_grid{
+    font-size: 11.5px;
+    grid-column-gap: 15px;
+    text-align: center;
+    list-style: none;
   }
 }
 
@@ -212,12 +221,7 @@ ul{
   }
 }
 
-@media (max-width: 720px){
-  .detalle_att,.detalle_def,.detalle_hp,.hp_img,.img_att,.img_def{
-    font-size: 7.5px;
-    height: 15px;
-  }
-}
+
 
 @media (max-width: 720px){
   .detalle_hp{
@@ -256,7 +260,7 @@ ul{
 
 @media (max-width: 720px){
   .detalle_att,.detalle_def,.detalle_hp,.hp_img,.img_att,.img_def{
-    font-size: 7px;
+    font-size: 8.5px;
     height: 10px;
   }
 }
@@ -312,7 +316,7 @@ ul{
 
 @media (max-width: 800px){
   .selec_general, .pageButton{
-    font-size: 7px;
+    font-size: 8px;
     margin-bottom: 3.5px;
   }
 }
@@ -331,5 +335,3 @@ ul{
     margin-bottom: 0.5rem;
   }
 }
-
-

@@ -16,7 +16,7 @@ const ContenedorCreacion = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 5rem;
+  margin-top: 6.5rem;
   color: white;
 `;
 const Contenedor = styled.div`
@@ -79,32 +79,32 @@ function Create(props) {
     }
     if (!state.hp) {
       errores.hp = "Vida es un campo obligatorio";
-    } else if (/(?=.*[A-Z])\w+/gi.test(state.hp)) {
+    } else if (!/^[0-9]+$/gm.test(state.hp)) {
       errores.hp = "Vida solamente puede contener numeros";
     }
     if (!state.attack) {
       errores.attack = "Ataque es un campo obligatorio";
-    } else if (/(?=.*[A-Z])\w+/gi.test(state.attack)) {
+    } else if (!/^[0-9]+$/gm.test(state.attack)) {
       errores.attack = "Ataque solamente puede contener numeros";
     }
     if (!state.defense) {
       errores.defense = "Defensa es un campo obligatorio";
-    } else if (/(?=.*[A-Z])\w+/gi.test(state.defense)) {
+    } else if (!/^[0-9]+$/gm.test(state.defense)) {
       errores.defense = "Defensa solamente puede contener numeros";
     }
     if (!state.speed) {
       errores.speed = "Velocidad es un campo obligatorio";
-    } else if (/(?=.*[A-Z])\w+/gi.test(state.speed)) {
+    } else if (!/^[0-9]+$/gm.test(state.speed)) {
       errores.speed = "Velocidad solamente puede contener numeros";
     }
     if (!state.height) {
       errores.height = "Altura es un campo obligatorio";
-    } else if (/(?=.*[A-Z])\w+/gi.test(state.height)) {
+    } else if (!/^[0-9]+$/gm.test(state.height)) {
       errores.height = "Altura solamente puede contener numeros";
     }
     if (!state.weight) {
       errores.weight = "Peso es un campo obligatorio";
-    } else if (/(?=.*[A-Z])\w+/gi.test(state.weight)) {
+    } else if (!/^[0-9]+$/gm.test(state.weight)) {
       errores.weight = "Peso solamente puede contener numeros";
     }
     return errores;
@@ -211,7 +211,7 @@ function Create(props) {
     } else {
       dispatch(addPokemon(state));
       history.push("/");
-      setTimeout(() => window.location.reload(), 1000);
+      setTimeout(() => window.location.reload(), 500);
     }
   };
 
@@ -227,6 +227,7 @@ function Create(props) {
             name="name"
             id="name"
             onChange={(e) => handleChange(e)}
+            autoComplete="off"
           />
           <label htmlFor="">Ataque</label>
           <input
@@ -235,6 +236,7 @@ function Create(props) {
             name="attack"
             id="attack"
             onChange={(e) => handleChange(e)}
+            autoComplete="off"
           />
           <label htmlFor="">Defensa</label>
           <input
@@ -243,6 +245,7 @@ function Create(props) {
             name="defense"
             id="defense"
             onChange={(e) => handleChange(e)}
+            autoComplete="off"
           />
           <label htmlFor="">Velocidad</label>
           <input
@@ -251,6 +254,7 @@ function Create(props) {
             name="speed"
             id="speed"
             onChange={(e) => handleChange(e)}
+            autoComplete="off"
           />
           <label htmlFor="">HP</label>
           <input
@@ -259,6 +263,7 @@ function Create(props) {
             name="hp"
             id="hp"
             onChange={(e) => handleChange(e)}
+            autoComplete="off"
           />
           <label htmlFor="">Altura</label>
           <input
@@ -267,6 +272,7 @@ function Create(props) {
             name="height"
             id="height"
             onChange={(e) => handleChange(e)}
+            autoComplete="off"
           />
           <label htmlFor="">Peso</label>
           <input
@@ -275,6 +281,7 @@ function Create(props) {
             name="weight"
             id="weight"
             onChange={(e) => handleChange(e)}
+            autoComplete="off"
           />
           <label htmlFor="">Imagen</label>
           <input
@@ -283,6 +290,7 @@ function Create(props) {
             name="imagen"
             id="imagen"
             onChange={(e) => handleChange(e)}
+            autoComplete="off"
           />
 
           <label htmlFor="">Tipos</label>
@@ -290,6 +298,7 @@ function Create(props) {
             defaultValue={9999}
             name="types"
             onChange={(e) => handleOptions(e)}
+            
           >
             <option disabled value="9999">
               Escoger

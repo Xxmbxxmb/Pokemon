@@ -9,12 +9,12 @@ p{
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: black;
 }
 
 .detalle_id{
     display: block;
-    color: white;
+    color: black;
     margin-bottom: 10px;
     text-align: center;
     
