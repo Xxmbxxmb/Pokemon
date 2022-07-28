@@ -2,7 +2,8 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import { getDetailsbyDB, getDetailsbyId } from "../../actions";
-import './PokemonDetail.css'
+import './PokemonDetail.css';
+import Back from "../BackButton/Back";
 
 export const Contenedor = styled.div`
   background-color: rgba(255, 255, 255, 0.8);
@@ -151,6 +152,7 @@ function PokemonDetail(props) {
           </CuadriculaStats>
         </Contenedor>
       )}
+      <Back goBack={props.history.goBack}/>
     </ContenedorXl>
   );
 }

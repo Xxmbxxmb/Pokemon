@@ -118,7 +118,7 @@ function Search(props) {
 
   return (
     <NavBar>
-      <Link to="/">
+      <Link to="/home">
         <img
           id="logo"
           src="https://fontmeme.com/permalink/220718/87bb8bcc39cbebd929a137928cc46d82.png"

@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { addPokemon } from "../../actions";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
+import BackButton from '../BackButton/Back';
 
 const InputForm = styled.form`
   display: grid;
@@ -380,6 +381,7 @@ function Create(props) {
           )}
         </InputForm>
       </Contenedor>
+      <BackButton goBack={props.history.goBack}/>
     </ContenedorCreacion>
   );
 }
