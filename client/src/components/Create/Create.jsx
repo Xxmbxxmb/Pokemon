@@ -211,7 +211,7 @@ function Create(props) {
       return;
     } else {
       dispatch(addPokemon(state));
-      history.push("/");
+      history.push("/home");
       setTimeout(() => window.location.reload(), 500);
     }
   };

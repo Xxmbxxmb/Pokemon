@@ -120,6 +120,12 @@ router.get("/pokemons/:idPokemon", async (req, res) => {
   }
 });
 
+router.put('/transfer', async (req, res) => {
+  const { idPokemon, idTipo } = req.body;
+  const pokemon = await Pokemon.findByPk(idPokemon);
+  res.json(await pokemon.addTipo(idTipo));
+});
+
 router.post("/pokemons", async (req, res) => {
   const { name, hp, attack, defense, speed, height, weight, imagen, types } =
     req.body;
@@ -137,6 +143,19 @@ router.post("/pokemons", async (req, res) => {
       types: types.slice(0,2),
       imagen: imagen === '' ? 'https://www.thequiz.com/wordpress/wp-content/uploads/2017/12/Featured-Whos-That-Pokemon.jpg' : imagen,
     });
+
+
+    for(let t of new_poke.types){
+      let tip = await Tipo.findOne({
+        where: {nombre: t}
+      })
+
+      await axios.put('https://pi-poke.herokuapp.com/transfer', {
+        idPokemon: new_poke.id,
+        idTipo: tip.dataValues.id
+      })
+    }
+
 
     return res.status(200).send(new_poke);
   } catch (e) {
@@ -165,5 +184,15 @@ router.get("/types", async (req, res) => {
     console.log(e);
   }
 });
+
+
+router.get('/testeo', async (req, res) => {
+  const { tipo } = req.body
+  let tip = await Tipo.findAll({
+    where: {nombre : 'ghost'}
+  })
+
+  return res.status(200).send(tip)
+})
 
 module.exports = router;

@@ -69,19 +69,6 @@ export function getFilterPaginado(lista){
   }
 
 
-// export function addPokemon(pokemon) {
-//     return function(dispatch){
-//         return axios.post("http://localhost:3001/pokemons", pokemon)
-//         .then((resp) => {
-//             dispatch({
-//                 type: CREATE_POKEMON,
-//                 payload: resp.data
-//             })
-//         })
-//         .catch((err) => console.error(err));
-//     }
-// }
-
 export function addPokemon(pokemon) {
     return async function(dispatch){
         return await axios.post("/pokemons", pokemon)
