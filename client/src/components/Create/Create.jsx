@@ -132,7 +132,6 @@ function Create(props) {
         e.target.options[e.target.selectedIndex].text
       ),
     });
-    console.log(state);
   };
 
   const validarFormulario = (e) => {
@@ -160,7 +159,6 @@ function Create(props) {
         alert(errores.weight)
         return;
       }
-      console.log(errores)
     }
     let nombre = document.querySelector("#name").value;
     let attack = document.querySelector("#attack").value;

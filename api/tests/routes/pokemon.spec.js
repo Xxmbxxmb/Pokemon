@@ -20,5 +20,13 @@ describe('Pokemon routes', () => {
     it('should get 200', () =>
       agent.get('/pokemons').expect(200)
     );
+
+    it('Responde un array con todos los pokemones', () => {
+
+    })
   });
+
+
+
+
 });

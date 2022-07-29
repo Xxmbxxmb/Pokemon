@@ -465,7 +465,6 @@ function Home(props) {
             className="selec_general"
             value={selName}
             onChange={(e) => {
-              console.log(e.target.value);
               setName(e.target.value);
               if (e.target.value === "ascendente") sortByName();
               if (e.target.value === "descendente") sortByName(true);
@@ -611,7 +610,6 @@ function Home(props) {
 
               {detalle.types.length > 1 ? (
                 <div>
-                  {console.log(detalle)}
                   <div className="tipo_detalle">
                     <ContenedorTipo tipo={detalle.types[0]}>
                       {detalle.types[0]}

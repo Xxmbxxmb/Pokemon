@@ -3,10 +3,18 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Img = styled.img`
-  width: 550px;
+  width: 450px;
   position: absolute;
   bottom: 0;
   right: 0;
+    
+  @media (max-width: 560px){
+    width: 350px;    
+  }
+
+  @media (max-width: 450px){
+    width: 300px;
+  }
 `;
 
 const DivCentro = styled.div`
@@ -15,18 +23,43 @@ const DivCentro = styled.div`
   height: 20vw;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 1100px){
+    margin-top: 5rem;
+  }
 `;
 
 const ImgCentro = styled.img`
   width: 550px;
+  
+  @media (max-width: 560px){
+    width: 450px;    
+  }
+  
+  @media (max-width: 450px){
+    width: 400px;    
+  }
+
+  @media (max-width: 400px){
+    width: 350px;
+  }
 `;
 
 const DivPosicion = styled.div`
   height: 100px;
-  margin-top: 3rem;
+  margin-top: 6.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 1100px){
+    margin-top: 7rem;
+  }
+
+  @media (max-width: 500px){
+    margin-top: 9rem;
+  }
+
 `;
 
 const DivAcceder = styled.div`
@@ -44,6 +77,15 @@ const DivAcceder = styled.div`
     color: black;
     background-color: rgba(255, 255, 255, 0.5);
   }
+  
+  @media (max-width: 560px){
+    font-size: 40px;    
+  }
+  
+  @media (max-width: 450px){
+    font-size: 35px;    
+  }
+
 `;
 
 function Landing(props) {
