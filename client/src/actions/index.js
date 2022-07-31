@@ -68,8 +68,17 @@ export function getFilterPaginado(lista){
     }
   }
 
+export function addPokemon(pokemon){
+  return async function(dispatch){
+    let nuevo = await axios.post("/pokemons", pokemon)
+    dispatch({
+      type: CREATE_POKEMON,
+      payload: nuevo
+    })
+  }
+}
 
-export function addPokemon(pokemon) {
+export function agregarPokemon(pokemon) {
     return async function(dispatch){
         return await axios.post("/pokemons", pokemon)
     }

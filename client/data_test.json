@@ -1,0 +1,617 @@
+{
+    "pokemons":[
+        {
+            "id": 1,
+            "nombre": "bulbasaur",
+            "hp": 45,
+            "attack": 49,
+            "defense": 49,
+            "imagenStatic": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg",
+            "imagen": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/1.gif",
+            "types": [
+                "grass",
+                "poison"
+            ]
+        },
+        {
+            "id": 2,
+            "nombre": "ivysaur",
+            "hp": 60,
+            "attack": 62,
+            "defense": 63,
+            "imagenStatic": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/2.svg",
+            "imagen": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/2.gif",
+            "types": [
+                "grass",
+                "poison"
+            ]
+        },
+        {
+            "id": 3,
+            "nombre": "venusaur",
+            "hp": 80,
+            "attack": 82,
+            "defense": 83,
+            "imagenStatic": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/3.svg",
+            "imagen": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/3.gif",
+            "types": [
+                "grass",
+                "poison"
+            ]
+        },
+        {
+            "id": 4,
+            "nombre": "charmander",
+            "hp": 39,
+            "attack": 52,
+            "defense": 43,
+            "imagenStatic": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/4.svg",
+            "imagen": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/4.gif",
+            "types": [
+                "fire"
+            ]
+        },
+        {
+            "id": 5,
+            "nombre": "charmeleon",
+            "hp": 58,
+            "attack": 64,
+            "defense": 58,
+            "imagenStatic": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/5.svg",
+            "imagen": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/5.gif",
+            "types": [
+                "fire"
+            ]
+        },
+        {
+            "id": 6,
+            "nombre": "charizard",
+            "hp": 78,
+            "attack": 84,
+            "defense": 78,
+            "imagenStatic": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/6.svg",
+            "imagen": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/6.gif",
+            "types": [
+                "fire",
+                "flying"
+            ]
+        },
+        {
+            "id": 7,
+            "nombre": "squirtle",
+            "hp": 44,
+            "attack": 48,
+            "defense": 65,
+            "imagenStatic": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/7.svg",
+            "imagen": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/7.gif",
+            "types": [
+                "water"
+            ]
+        },
+        {
+            "id": 8,
+            "nombre": "wartortle",
+            "hp": 59,
+            "attack": 63,
+            "defense": 80,
+            "imagenStatic": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/8.svg",
+            "imagen": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/8.gif",
+            "types": [
+                "water"
+            ]
+        },
+        {
+            "id": 9,
+            "nombre": "blastoise",
+            "hp": 79,
+            "attack": 83,
+            "defense": 100,
+            "imagenStatic": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/9.svg",
+            "imagen": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/9.gif",
+            "types": [
+                "water"
+            ]
+        },
+        {
+            "id": 10,
+            "nombre": "caterpie",
+            "hp": 45,
+            "attack": 30,
+            "defense": 35,
+            "imagenStatic": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/10.svg",
+            "imagen": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/10.gif",
+            "types": [
+                "bug"
+            ]
+        },
+        {
+            "id": 11,
+            "nombre": "metapod",
+            "hp": 50,
+            "attack": 20,
+            "defense": 55,
+            "imagenStatic": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/11.svg",
+            "imagen": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/11.gif",
+            "types": [
+                "bug"
+            ]
+        },
+        {
+            "id": 12,
+            "nombre": "butterfree",
+            "hp": 60,
+            "attack": 45,
+            "defense": 50,
+            "imagenStatic": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/12.svg",
+            "imagen": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/12.gif",
+            "types": [
+                "bug",
+                "flying"
+            ]
+        },
+        {
+            "id": 13,
+            "nombre": "weedle",
+            "hp": 40,
+            "attack": 35,
+            "defense": 30,
+            "imagenStatic": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/13.svg",
+            "imagen": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/13.gif",
+            "types": [
+                "bug",
+                "poison"
+            ]
+        },
+        {
+            "id": 14,
+            "nombre": "kakuna",
+            "hp": 45,
+            "attack": 25,
+            "defense": 50,
+            "imagenStatic": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/14.svg",
+            "imagen": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/14.gif",
+            "types": [
+                "bug",
+                "poison"
+            ]
+        },
+        {
+            "id": 15,
+            "nombre": "beedrill",
+            "hp": 65,
+            "attack": 90,
+            "defense": 40,
+            "imagenStatic": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/15.svg",
+            "imagen": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/15.gif",
+            "types": [
+                "bug",
+                "poison"
+            ]
+        },
+        {
+            "id": 16,
+            "nombre": "pidgey",
+            "hp": 40,
+            "attack": 45,
+            "defense": 40,
+            "imagenStatic": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/16.svg",
+            "imagen": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/16.gif",
+            "types": [
+                "normal",
+                "flying"
+            ]
+        },
+        {
+            "id": 17,
+            "nombre": "pidgeotto",
+            "hp": 63,
+            "attack": 60,
+            "defense": 55,
+            "imagenStatic": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/17.svg",
+            "imagen": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/17.gif",
+            "types": [
+                "normal",
+                "flying"
+            ]
+        },
+        {
+            "id": 18,
+            "nombre": "pidgeot",
+            "hp": 83,
+            "attack": 80,
+            "defense": 75,
+            "imagenStatic": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/18.svg",
+            "imagen": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/18.gif",
+            "types": [
+                "normal",
+                "flying"
+            ]
+        },
+        {
+            "id": 19,
+            "nombre": "rattata",
+            "hp": 30,
+            "attack": 56,
+            "defense": 35,
+            "imagenStatic": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/19.svg",
+            "imagen": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/19.gif",
+            "types": [
+                "normal"
+            ]
+        },
+        {
+            "id": 20,
+            "nombre": "raticate",
+            "hp": 55,
+            "attack": 81,
+            "defense": 60,
+            "imagenStatic": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/20.svg",
+            "imagen": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/20.gif",
+            "types": [
+                "normal"
+            ]
+        },
+        {
+            "id": 21,
+            "nombre": "spearow",
+            "hp": 40,
+            "attack": 60,
+            "defense": 30,
+            "imagenStatic": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/21.svg",
+            "imagen": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/21.gif",
+            "types": [
+                "normal",
+                "flying"
+            ]
+        },
+        {
+            "id": 22,
+            "nombre": "fearow",
+            "hp": 65,
+            "attack": 90,
+            "defense": 65,
+            "imagenStatic": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/22.svg",
+            "imagen": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/22.gif",
+            "types": [
+                "normal",
+                "flying"
+            ]
+        },
+        {
+            "id": 23,
+            "nombre": "ekans",
+            "hp": 35,
+            "attack": 60,
+            "defense": 44,
+            "imagenStatic": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/23.svg",
+            "imagen": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/23.gif",
+            "types": [
+                "poison"
+            ]
+        },
+        {
+            "id": 24,
+            "nombre": "arbok",
+            "hp": 60,
+            "attack": 95,
+            "defense": 69,
+            "imagenStatic": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/24.svg",
+            "imagen": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/24.gif",
+            "types": [
+                "poison"
+            ]
+        },
+        {
+            "id": 25,
+            "nombre": "pikachu",
+            "hp": 35,
+            "attack": 55,
+            "defense": 40,
+            "imagenStatic": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/25.svg",
+            "imagen": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/25.gif",
+            "types": [
+                "electric"
+            ]
+        },
+        {
+            "id": 26,
+            "nombre": "raichu",
+            "hp": 60,
+            "attack": 90,
+            "defense": 55,
+            "imagenStatic": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/26.svg",
+            "imagen": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/26.gif",
+            "types": [
+                "electric"
+            ]
+        },
+        {
+            "id": 27,
+            "nombre": "sandshrew",
+            "hp": 50,
+            "attack": 75,
+            "defense": 85,
+            "imagenStatic": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/27.svg",
+            "imagen": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/27.gif",
+            "types": [
+                "ground"
+            ]
+        },
+        {
+            "id": 28,
+            "nombre": "sandslash",
+            "hp": 75,
+            "attack": 100,
+            "defense": 110,
+            "imagenStatic": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/28.svg",
+            "imagen": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/28.gif",
+            "types": [
+                "ground"
+            ]
+        },
+        {
+            "id": 29,
+            "nombre": "nidoran-f",
+            "hp": 55,
+            "attack": 47,
+            "defense": 52,
+            "imagenStatic": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/29.svg",
+            "imagen": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/29.gif",
+            "types": [
+                "poison"
+            ]
+        },
+        {
+            "id": 30,
+            "nombre": "nidorina",
+            "hp": 70,
+            "attack": 62,
+            "defense": 67,
+            "imagenStatic": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/30.svg",
+            "imagen": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/30.gif",
+            "types": [
+                "poison"
+            ]
+        },
+        {
+            "id": 31,
+            "nombre": "nidoqueen",
+            "hp": 90,
+            "attack": 92,
+            "defense": 87,
+            "imagenStatic": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/31.svg",
+            "imagen": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/31.gif",
+            "types": [
+                "poison",
+                "ground"
+            ]
+        },
+        {
+            "id": 32,
+            "nombre": "nidoran-m",
+            "hp": 46,
+            "attack": 57,
+            "defense": 40,
+            "imagenStatic": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/32.svg",
+            "imagen": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/32.gif",
+            "types": [
+                "poison"
+            ]
+        },
+        {
+            "id": 33,
+            "nombre": "nidorino",
+            "hp": 61,
+            "attack": 72,
+            "defense": 57,
+            "imagenStatic": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/33.svg",
+            "imagen": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/33.gif",
+            "types": [
+                "poison"
+            ]
+        },
+        {
+            "id": 34,
+            "nombre": "nidoking",
+            "hp": 81,
+            "attack": 102,
+            "defense": 77,
+            "imagenStatic": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/34.svg",
+            "imagen": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/34.gif",
+            "types": [
+                "poison",
+                "ground"
+            ]
+        },
+        {
+            "id": 35,
+            "nombre": "clefairy",
+            "hp": 70,
+            "attack": 45,
+            "defense": 48,
+            "imagenStatic": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/35.svg",
+            "imagen": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/35.gif",
+            "types": [
+                "fairy"
+            ]
+        },
+        {
+            "id": 36,
+            "nombre": "clefable",
+            "hp": 95,
+            "attack": 70,
+            "defense": 73,
+            "imagenStatic": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/36.svg",
+            "imagen": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/36.gif",
+            "types": [
+                "fairy"
+            ]
+        },
+        {
+            "id": 37,
+            "nombre": "vulpix",
+            "hp": 38,
+            "attack": 41,
+            "defense": 40,
+            "imagenStatic": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/37.svg",
+            "imagen": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/37.gif",
+            "types": [
+                "fire"
+            ]
+        },
+        {
+            "id": 38,
+            "nombre": "ninetales",
+            "hp": 73,
+            "attack": 76,
+            "defense": 75,
+            "imagenStatic": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/38.svg",
+            "imagen": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/38.gif",
+            "types": [
+                "fire"
+            ]
+        },
+        {
+            "id": 39,
+            "nombre": "jigglypuff",
+            "hp": 115,
+            "attack": 45,
+            "defense": 20,
+            "imagenStatic": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/39.svg",
+            "imagen": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/39.gif",
+            "types": [
+                "normal",
+                "fairy"
+            ]
+        },
+        {
+            "id": 40,
+            "nombre": "wigglytuff",
+            "hp": 140,
+            "attack": 70,
+            "defense": 45,
+            "imagenStatic": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/40.svg",
+            "imagen": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/40.gif",
+            "types": [
+                "normal",
+                "fairy"
+            ]
+        },
+        {
+            "id": 41,
+            "nombre": "zubat",
+            "hp": 40,
+            "attack": 45,
+            "defense": 35,
+            "imagenStatic": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/41.svg",
+            "imagen": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/41.gif",
+            "types": [
+                "poison",
+                "flying"
+            ]
+        },
+        {
+            "id": 42,
+            "nombre": "golbat",
+            "hp": 75,
+            "attack": 80,
+            "defense": 70,
+            "imagenStatic": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/42.svg",
+            "imagen": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/42.gif",
+            "types": [
+                "poison",
+                "flying"
+            ]
+        },
+        {
+            "id": 43,
+            "nombre": "oddish",
+            "hp": 45,
+            "attack": 50,
+            "defense": 55,
+            "imagenStatic": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/43.svg",
+            "imagen": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/43.gif",
+            "types": [
+                "grass",
+                "poison"
+            ]
+        },
+        {
+            "id": 44,
+            "nombre": "gloom",
+            "hp": 60,
+            "attack": 65,
+            "defense": 70,
+            "imagenStatic": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/44.svg",
+            "imagen": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/44.gif",
+            "types": [
+                "grass",
+                "poison"
+            ]
+        },
+        {
+            "id": 45,
+            "nombre": "vileplume",
+            "hp": 75,
+            "attack": 80,
+            "defense": 85,
+            "imagenStatic": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/45.svg",
+            "imagen": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/45.gif",
+            "types": [
+                "grass",
+                "poison"
+            ]
+        },
+        {
+            "id": 46,
+            "nombre": "paras",
+            "hp": 35,
+            "attack": 70,
+            "defense": 55,
+            "imagenStatic": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/46.svg",
+            "imagen": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/46.gif",
+            "types": [
+                "bug",
+                "grass"
+            ]
+        },
+        {
+            "id": 47,
+            "nombre": "parasect",
+            "hp": 60,
+            "attack": 95,
+            "defense": 80,
+            "imagenStatic": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/47.svg",
+            "imagen": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/47.gif",
+            "types": [
+                "bug",
+                "grass"
+            ]
+        },
+        {
+            "id": 48,
+            "nombre": "venonat",
+            "hp": 60,
+            "attack": 55,
+            "defense": 50,
+            "imagenStatic": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/48.svg",
+            "imagen": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/48.gif",
+            "types": [
+                "bug",
+                "poison"
+            ]
+        },
+        {
+            "id": "0b205587-79f5-42cf-95de-99d5df16c459",
+            "nombre": "Pikachu",
+            "hp": null,
+            "attack": null,
+            "defense": null,
+            "speed": null,
+            "height": null,
+            "weight": null,
+            "imagen": null,
+            "types": null
+        }
+    ]
+}
