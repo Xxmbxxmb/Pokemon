@@ -141,7 +141,7 @@ router.post("/pokemons", async (req, res) => {
       height,
       weight,
       types: types.slice(0,2),
-      imagen: imagen === '' ? 'https://www.thequiz.com/wordpress/wp-content/uploads/2017/12/Featured-Whos-That-Pokemon.jpg' : imagen,
+      imagen: !imagen ? 'https://www.thequiz.com/wordpress/wp-content/uploads/2017/12/Featured-Whos-That-Pokemon.jpg' : imagen,
     });
 
 
@@ -176,7 +176,7 @@ router.get("/types", async (req, res) => {
           nombre: t,
         });
       });
-      return res.send((tipos));
+      return res.status(200).send((tipos));
     }
 
     return res.status(200).send(db_type);
@@ -193,6 +193,19 @@ router.get('/testeo', async (req, res) => {
   })
 
   return res.status(200).send(tip)
+})
+
+router.use('/error', (req, res, next) => {
+  let error = new Error(), 
+  locals = {
+    title: 'Error 404',
+    description: 'Recurso no encontrado',
+    error: error
+  }
+
+  error.status = 404
+  res.status(404).send('error', locals)
+  next()
 })
 
 module.exports = router;
