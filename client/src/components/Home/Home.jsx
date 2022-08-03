@@ -150,7 +150,7 @@ export const ImgPoke = styled.img`
     mix-width: 100px;
     max-width: 100px;
   }
-  
+
   @media (max-width: 800px) {
     min-height: 95px;
     max-height: 95px;
@@ -535,13 +535,16 @@ function Home(props) {
       <div id="try">
         <DivXl>
           {pokemones.length === 0 ? (
-            <div id="div_load">
-              <img
-                src="https://weichiachang.github.io/pokemon-master/img/loading.45600eb9.gif"
-                id="loading_gif"
-                alt=""
-              />
-            </div>
+            <>
+              <img id="cargando" src="https://c.tenor.com/On7kvXhzml4AAAAi/loading-gif.gif" alt="" />
+              <div id="div_load">
+                <img
+                  src="https://weichiachang.github.io/pokemon-master/img/loading.45600eb9.gif"
+                  id="loading_gif"
+                  alt=""
+                />
+              </div>
+            </>
           ) : items.length === 0 && selected === "" ? (
             setItems([...pokemones].splice(0, ITEMS_PAGINA))
           ) : items.length === 0 && selected !== "" ? null : (
@@ -568,25 +571,19 @@ function Home(props) {
           {Object.keys(detalle).length !== 0 ? (
             <Contenedor>
               <div>
-                <span className="detalle_hp">
-                  {detalle.hp}
-                </span>
+                <span className="detalle_hp">{detalle.hp}</span>
                 <img
                   className="hp_img"
                   src="https://i.imgur.com/cNRQUhr.png"
                   alt="hp"
                 />
-                <span className="detalle_att">
-                  {detalle.attack}
-                </span>
+                <span className="detalle_att">{detalle.attack}</span>
                 <img
                   src="https://icon-library.com/images/attack-icon/attack-icon-28.jpg"
                   alt="att"
                   className="img_att"
                 />
-                <span className="detalle_def">
-                  {detalle.defense}
-                </span>
+                <span className="detalle_def">{detalle.defense}</span>
                 <img
                   // src="https://cdn2.iconfinder.com/data/icons/rpg-basic-set-2/512/defense-512.png"
                   src="https://icon-library.com/images/defend-icon/defend-icon-21.jpg"

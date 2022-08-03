@@ -5,6 +5,10 @@
   align-items: center;
 }
 
+#cargando{
+  height: 100px;
+}
+
 #div_load {
   display: flex;
   justify-content: center;
