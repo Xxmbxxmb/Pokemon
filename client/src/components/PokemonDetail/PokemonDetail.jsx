@@ -128,10 +128,12 @@ function PokemonDetail(props) {
       ) : (
         <Contenedor>
           <div className="divID">
+            {console.log(pokemon_detail.types)}
             <span className="detalle_id">{`#${pokemon_detail.id}`}</span>
           </div>
           <ImgPoke src={`${pokemon_detail.imagen}`} alt="" />
           <h2 style={{color: 'black'}}>{`${pokemon_detail.nombre[0].toUpperCase()}${pokemon_detail.nombre.slice(1)}`}</h2>
+          
 
             {
                 pokemon_detail.types.length > 1 

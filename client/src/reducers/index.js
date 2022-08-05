@@ -1,4 +1,4 @@
-import { GET_POKEMONS, GET_DETAILS, CREATE_POKEMON, GET_FILTER } from "../actions/index";
+import { GET_POKEMONS, GET_DETAILS, CREATE_POKEMON, GET_FILTER, FILTER_ALTURA } from "../actions/index";
 
 const initialState = {
   pokemones: [],
@@ -34,6 +34,13 @@ export default function rootReducer(state = initialState, action) {
         ...state,
         filtrado: [...action.payload]
 
+      }
+
+    case FILTER_ALTURA:
+      let resultado = state.pokemones.filter(p => p.attack > 80)
+      return{
+        ...state,
+        pokemones: [...resultado]
       }
   }
 }

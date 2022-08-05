@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getFilterPaginado, getPokemons } from "../../actions";
+import { getFilterPaginado, getPokemons, filtradoAlt } from "../../actions";
 import Card from "../Card/Card";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
@@ -294,7 +294,7 @@ function Home(props) {
 
   useEffect(() => {
     if (pokemones.length === 0) dispatch(getPokemons());
-  }, [pokemones, items, dispatch]);
+  }, [pokemones, items, dispatch, currentPage]);
 
   const nextHandler = () => {
     let lista = [...asdf];
@@ -457,6 +457,13 @@ function Home(props) {
     setCurrentPage(0);
   };
 
+  const filtroAltura = () => {
+    dispatch(filtradoAlt());
+    setItems([...pokemones].splice(0, ITEMS_PAGINA));
+    setCurrentPage(0);
+    console.log(pokemones);
+  };
+
   return (
     <>
       <div id="contenedorFiltros">
@@ -516,6 +523,8 @@ function Home(props) {
             <option value="originales">Originales</option>
             <option value="creados">Creados</option>
           </select>
+
+          <button onClick={() => filtroAltura()}>X</button>
         </DivFilters>
         <DivButton>
           <button className="pageButton" onClick={prevHandler}>
@@ -536,7 +545,11 @@ function Home(props) {
         <DivXl>
           {pokemones.length === 0 ? (
             <>
-              <img id="cargando" src="https://c.tenor.com/On7kvXhzml4AAAAi/loading-gif.gif" alt="" />
+              <img
+                id="cargando"
+                src="https://c.tenor.com/On7kvXhzml4AAAAi/loading-gif.gif"
+                alt=""
+              />
               <div id="div_load">
                 <img
                   src="https://weichiachang.github.io/pokemon-master/img/loading.45600eb9.gif"
@@ -561,6 +574,7 @@ function Home(props) {
                   attack={pokemon.attack}
                   types={pokemon.types}
                   id={pokemon.id}
+                  // base_exp={pokemon['base_exp']}
                 />
               );
             })

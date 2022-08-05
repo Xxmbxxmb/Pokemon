@@ -32,6 +32,7 @@ router.get("/pokemons", async (req, res) => {
             "black-white"
           ].animated.front_default;
         new_poke.types = [];
+        new_poke['base_exp'] = r.data.base_experience
 
         for (let tipo of r.data.types) {
           new_poke["types"].push(tipo.type.name);
@@ -64,18 +65,7 @@ router.get("/pokemons", async (req, res) => {
         data.types = []
         p.dataValues.tipos.map(t => data.types.push(t.dataValues.nombre))
         resultado.push(data)
-        // console.log(data)
       })
-
-
-
-      // const base_datos = await Pokemon.findAll();
-      // if (base_datos.length > 0) {
-      //   base_datos.map((p) => {
-      //     console.log(p.dataValues)
-      //     resultado.push(p.dataValues);
-      //   });
-      // }
 
       return res.status(200).send(resultado);
     }
@@ -141,7 +131,10 @@ router.get("/pokemons/:idPokemon", async (req, res) => {
   } else {
     try{
       let r = await Pokemon.findByPk(idPokemon)
-      res.status(200).send(r)
+      r.dataValues.types = []
+      let tipos = await r.getTipos()
+      tipos.map(t => r.dataValues.types.push(t.dataValues.nombre))
+      res.status(200).send(r.dataValues)
 
     } catch(e){
       console.log(e)
@@ -169,17 +162,17 @@ router.post("/pokemons", async (req, res) => {
       speed,
       height,
       weight,
-      types: types.slice(0,2),
       imagen: !imagen ? 'https://www.thequiz.com/wordpress/wp-content/uploads/2017/12/Featured-Whos-That-Pokemon.jpg' : imagen,
     });
 
 
-    for(let t of new_poke.types){
+    for(let t of types){
       let tip = await Tipo.findOne({
         where: {nombre: t}
       })
 
-      await axios.put('https://pi-poke.herokuapp.com/transfer', {
+      // await axios.put('https://pi-poke.herokuapp.com/transfer', {
+      await axios.put('http://localhost:3001/transfer', {
         idPokemon: new_poke.id,
         idTipo: tip.dataValues.id
       })
@@ -223,7 +216,6 @@ router.get('/testeo', async (req, res) => {
 
   return res.status(200).send(tip)
 })
-
 
 router.use('/error', (req, res, next) => {
   let error = new Error(), 

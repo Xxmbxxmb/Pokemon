@@ -4,6 +4,7 @@ export const GET_POKEMONS = "GET_POKEMONS";
 export const GET_DETAILS = "GET_DETAILS";
 export const GET_FILTER = "GET_FILTER";
 export const CREATE_POKEMON = "CREATE_POKEMON";
+export const FILTER_ALTURA = "FILTER_ALTURA"
 
 export function getPokemons() {
   return function (dispatch) {
@@ -67,6 +68,13 @@ export function getFilterPaginado(lista){
       })
     }
   }
+
+export function filtradoAlt (){
+  return {
+      type: FILTER_ALTURA
+    }
+  }
+
 
 export function addPokemon(pokemon){
   return async function(dispatch){

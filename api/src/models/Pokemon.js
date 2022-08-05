@@ -40,9 +40,6 @@ module.exports = (sequelize) => {
     },
     imagen: {
       type: DataTypes.STRING
-    },
-    types: {
-      type: DataTypes.ARRAY(DataTypes.STRING)
     }
   }, {
     timestamps: false
