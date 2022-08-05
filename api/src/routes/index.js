@@ -40,13 +40,42 @@ router.get("/pokemons", async (req, res) => {
         resultado.push(new_poke);
       }
 
-      const base_datos = await Pokemon.findAll();
-      // console.log(base_datos)
-      if (base_datos.length > 0) {
-        base_datos.map((p) => {
-          resultado.push(p.dataValues);
-        });
-      }
+      const allData = await Pokemon.findAll({
+        include: [{
+          model: Tipo,
+          attributes: ['nombre'],
+          through: {
+            attributes: []
+          }
+        }]
+      });
+
+      allData.map(p => {
+        let data = {}
+        data.id = p.dataValues.id
+        data.nombre = p.dataValues.nombre
+        data.hp = p.dataValues.hp
+        data.attack = p.dataValues.attack
+        data.defense = p.dataValues.defense
+        data.speed = p.dataValues.speed
+        data.height = p.dataValues.height
+        data.weight = p.dataValues.weight
+        data.imagen = p.dataValues.imagen
+        data.types = []
+        p.dataValues.tipos.map(t => data.types.push(t.dataValues.nombre))
+        resultado.push(data)
+        // console.log(data)
+      })
+
+
+
+      // const base_datos = await Pokemon.findAll();
+      // if (base_datos.length > 0) {
+      //   base_datos.map((p) => {
+      //     console.log(p.dataValues)
+      //     resultado.push(p.dataValues);
+      //   });
+      // }
 
       return res.status(200).send(resultado);
     }
@@ -194,6 +223,7 @@ router.get('/testeo', async (req, res) => {
 
   return res.status(200).send(tip)
 })
+
 
 router.use('/error', (req, res, next) => {
   let error = new Error(), 
