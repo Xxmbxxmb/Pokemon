@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getFilterPaginado, getPokemons, filtradoAlt } from "../../actions";
+import { getFilterPaginado, getPokemons, filtradoAlt, filtradoAtt, filtradoName, filtradoCreados, filtradoOriginales, filtradoTipo } from "../../actions";
 import Card from "../Card/Card";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
@@ -230,22 +230,6 @@ export const MainTipos = styled.div`
 
 const ITEMS_PAGINA = 12;
 
-const sName = (lista) => {
-  lista = lista.sort((a, b) => {
-    if (a.nombre > b.nombre) return 1;
-    if (a.nombre < b.nombre) return -1;
-    return 0;
-  });
-};
-
-const sAtt = (lista) => {
-  lista = lista.sort((a, b) => {
-    if (a.attack > b.attack) return 1;
-    if (a.attack < b.attack) return -1;
-    return 0;
-  });
-};
-
 function Home(props) {
   const options = [
     { value: "", text: "-- Ordenar por tipo --" },
@@ -293,8 +277,13 @@ function Home(props) {
   let detalle = useSelector((state) => state.pokemon_detail);
 
   useEffect(() => {
-    if (pokemones.length === 0) dispatch(getPokemons());
-  }, [pokemones, items, dispatch, currentPage]);
+    dispatch(getPokemons());
+  }, []);
+
+  useEffect(() => {
+    setItems([...asdf].splice(0, ITEMS_PAGINA))
+  }, [asdf]);
+
 
   const nextHandler = () => {
     let lista = [...asdf];
@@ -329,121 +318,41 @@ function Home(props) {
 
   const handleChange = (event) => {
     setSelected(event.target.value);
-    let pokemon_filter;
-
-    if (filterOriginales === true) {
-      if (event.target.value !== "") {
-        pokemon_filter = poke_originales.filter((p) =>
-          p.types.includes(event.target.value)
-        );
-        if (sortName === true) sName(pokemon_filter);
-        else if (sortAttack === true) sAtt(pokemon_filter);
-        dispatch(getFilterPaginado(pokemon_filter));
-        setItems([...pokemon_filter].splice(0, ITEMS_PAGINA));
-        setCurrentPage(0);
-      }
-    }
-
-    if (filterCreados === true) {
-      if (event.target.value !== "") {
-        pokemon_filter = creados.filter((p) =>
-          p.types.includes(event.target.value)
-        );
-        if (sortName === true) sName(pokemon_filter);
-        else if (sortAttack === true) sAtt(pokemon_filter);
-        dispatch(getFilterPaginado(pokemon_filter));
-        setItems([...pokemon_filter].splice(0, ITEMS_PAGINA));
-        setCurrentPage(0);
-      }
-    }
-
-    if (filterCreados === false && filterOriginales === false) {
-      if (event.target.value !== "") {
-        pokemon_filter = pokemones.filter((p) =>
-          p.types.includes(event.target.value)
-        );
-        if (sortName === true) sName(pokemon_filter);
-        else if (sortAttack === true) sAtt(pokemon_filter);
-        dispatch(getFilterPaginado(pokemon_filter));
-        setItems([...pokemon_filter].splice(0, ITEMS_PAGINA));
-        setCurrentPage(0);
-      }
-    }
+    dispatch(filtradoTipo(event.target.value))
   };
 
-  const sortByName = (reverse) => {
+  const sortByName = (reverse, tipo) => {
     setSortName(true);
     setSortAttack(false);
-    let lista = [...pokemones];
-    if (selected !== "") {
-      lista = lista.filter((p) => p.types.includes(selected));
-    }
-    if (filterCreados === true) {
-      lista = lista.filter((p) => typeof p.id !== "number");
-    }
-    if (filterOriginales === true) {
-      lista = lista.filter((p) => typeof p.id === "number");
-    }
-    sName(lista);
-    if (reverse) {
-      lista = lista.reverse();
-    }
-    dispatch(getFilterPaginado(lista));
-    setItems([...lista].splice(0, ITEMS_PAGINA));
+    dispatch(filtradoName(reverse, tipo))
     setCurrentPage(0);
   };
 
-  const sortByAttack = (reverse) => {
+  const sortByAttack = (reverse, tipo) => {
     setSortName(false);
     setSortAttack(true);
-    let lista = [...pokemones];
-    if (selected !== "") {
-      lista = lista.filter((p) => p.types.includes(selected));
-    }
-    if (filterCreados === true) {
-      lista = lista.filter((p) => typeof p.id !== "number");
-    }
-    if (filterOriginales === true) {
-      lista = lista.filter((p) => typeof p.id === "number");
-    }
-    sAtt(lista);
-    if (reverse) {
-      lista = lista.reverse();
-    }
-    dispatch(getFilterPaginado(lista));
-    setItems([...lista].splice(0, ITEMS_PAGINA));
+    dispatch(filtradoAtt(reverse, tipo));
     setCurrentPage(0);
   };
 
-  const sortOriginals = () => {
+  const filtroAltura = () => {
+    dispatch(filtradoAlt())
+    setCurrentPage(0)
+    console.log(asdf)
+
+  }
+
+  const sortOriginals = (tipo) => {
     setFilterOriginales(true);
     setFilterCreados(false);
-    let lista = [...pokemones];
-    if (selected !== "") {
-      lista = lista.filter((p) => p.types.includes(selected));
-    }
-    lista = lista.filter((p) => typeof p.id === "number");
-    if (sortName === true) sName(lista);
-    else if (sortAttack === true) sAtt(lista);
-
-    dispatch(getFilterPaginado(lista));
-    setItems([...lista].splice(0, ITEMS_PAGINA));
+    dispatch(filtradoOriginales(tipo));
     setCurrentPage(0);
   };
 
-  const sortCreated = () => {
+  const sortCreated = (tipo) => {
     setFilterOriginales(false);
     setFilterCreados(true);
-    let lista = [...pokemones];
-    if (selected !== "") {
-      lista = lista.filter((p) => p.types.includes(selected));
-    }
-    lista = lista.filter((p) => typeof p.id !== "number");
-    if (sortName === true) sName(lista);
-    else if (sortAttack === true) sAtt(lista);
-
-    dispatch(getFilterPaginado(lista));
-    setItems([...lista].splice(0, ITEMS_PAGINA));
+    dispatch(filtradoCreados(tipo));
     setCurrentPage(0);
   };
 
@@ -457,13 +366,6 @@ function Home(props) {
     setCurrentPage(0);
   };
 
-  const filtroAltura = () => {
-    dispatch(filtradoAlt());
-    setItems([...pokemones].splice(0, ITEMS_PAGINA));
-    setCurrentPage(0);
-    console.log(pokemones);
-  };
-
   return (
     <>
       <div id="contenedorFiltros">
@@ -473,8 +375,9 @@ function Home(props) {
             value={selName}
             onChange={(e) => {
               setName(e.target.value);
-              if (e.target.value === "ascendente") sortByName();
-              if (e.target.value === "descendente") sortByName(true);
+              console.log(asdf)
+              if (e.target.value === "ascendente") sortByName(false, selected);
+              if (e.target.value === "descendente") sortByName(true, selected);
             }}
           >
             <option value="">-- Orden por Nombre --</option>
@@ -487,8 +390,10 @@ function Home(props) {
             value={selAtt}
             onChange={(e) => {
               setAtt(e.target.value);
-              if (e.target.value === "ascendente") sortByAttack();
-              if (e.target.value === "descendente") sortByAttack(true);
+              console.log(asdf)
+
+              if (e.target.value === "ascendente") sortByAttack(false, selected);
+              if (e.target.value === "descendente") sortByAttack(true, selected);
             }}
           >
             <option value="">-- Orden por Ataque --</option>
@@ -513,8 +418,8 @@ function Home(props) {
             value={selOri}
             onChange={(e) => {
               setOri(e.target.value);
-              if (e.target.value === "originales") sortOriginals();
-              if (e.target.value === "creados") sortCreated();
+              if (e.target.value === "originales") sortOriginals(selected);
+              if (e.target.value === "creados") sortCreated(selected);
               if (e.target.value === "todos") sortTodos();
             }}
           >
@@ -525,6 +430,7 @@ function Home(props) {
           </select>
 
           <button onClick={() => filtroAltura()}>X</button>
+
         </DivFilters>
         <DivButton>
           <button className="pageButton" onClick={prevHandler}>
@@ -545,11 +451,7 @@ function Home(props) {
         <DivXl>
           {pokemones.length === 0 ? (
             <>
-              <img
-                id="cargando"
-                src="https://c.tenor.com/On7kvXhzml4AAAAi/loading-gif.gif"
-                alt=""
-              />
+              <img id="cargando" src="https://c.tenor.com/On7kvXhzml4AAAAi/loading-gif.gif" alt="" />
               <div id="div_load">
                 <img
                   src="https://weichiachang.github.io/pokemon-master/img/loading.45600eb9.gif"

@@ -4,7 +4,12 @@ export const GET_POKEMONS = "GET_POKEMONS";
 export const GET_DETAILS = "GET_DETAILS";
 export const GET_FILTER = "GET_FILTER";
 export const CREATE_POKEMON = "CREATE_POKEMON";
+export const FILTER_ATT = "FILTER_ATT";
 export const FILTER_ALTURA = "FILTER_ALTURA"
+export const FILTER_NAME = "FILTER_NAME"
+export const FILTER_ORIGINAL = "FILTER_ORIGINAL"
+export const FILTER_CREADOS = "FILTER_CREADOS"
+export const FILTER_TIPOS = "FILTER_TIPOS"
 
 export function getPokemons() {
   return function (dispatch) {
@@ -75,6 +80,42 @@ export function filtradoAlt (){
     }
   }
 
+export function filtradoAtt(reverse, tipo){
+  return {
+    type: FILTER_ATT,
+    payload: reverse,
+    tipo: tipo
+  }
+}
+
+export function filtradoName(reverse, tipo){
+  return {
+    type: FILTER_NAME,
+    payload: reverse,
+    tipo: tipo
+  }
+}
+
+export function filtradoOriginales(tipo){
+  return {
+    type: FILTER_ORIGINAL,
+    tipo: tipo
+  }
+}
+
+export function filtradoCreados(tipo){
+  return {
+    type: FILTER_CREADOS,
+    tipo: tipo
+  }
+}
+
+export function filtradoTipo(tipo){
+  return {
+    type: FILTER_TIPOS,
+    payload: tipo
+  }
+}
 
 export function addPokemon(pokemon){
   return async function(dispatch){
