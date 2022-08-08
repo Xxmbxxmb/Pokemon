@@ -171,8 +171,8 @@ router.post("/pokemons", async (req, res) => {
         where: {nombre: t}
       })
 
-      // await axios.put('https://pi-poke.herokuapp.com/transfer', {
-      await axios.put('http://localhost:3001/transfer', {
+      await axios.put('https://pi-poke.herokuapp.com/transfer', {
+      // await axios.put('http://localhost:3001/transfer', {
         idPokemon: new_poke.id,
         idTipo: tip.dataValues.id
       })

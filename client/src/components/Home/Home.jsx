@@ -264,9 +264,6 @@ function Home(props) {
   let [filterCreados, setFilterCreados] = useState(false);
   let [filterOriginales, setFilterOriginales] = useState(false);
 
-  let [sortName, setSortName] = useState(false);
-  let [sortAttack, setSortAttack] = useState(false);
-
   const [items, setItems] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
 
@@ -322,15 +319,11 @@ function Home(props) {
   };
 
   const sortByName = (reverse, tipo) => {
-    setSortName(true);
-    setSortAttack(false);
     dispatch(filtradoName(reverse, tipo))
     setCurrentPage(0);
   };
 
   const sortByAttack = (reverse, tipo) => {
-    setSortName(false);
-    setSortAttack(true);
     dispatch(filtradoAtt(reverse, tipo));
     setCurrentPage(0);
   };
