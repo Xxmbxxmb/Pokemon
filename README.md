@@ -4,9 +4,9 @@
 
 <img height="150" src="./pokemon.png" />
 
-<img src="https://i.imgur.com/xuNwBBZ.png" width="333" height="205"  />
-<img src="https://i.imgur.com/vI9w4E3.png" width="333" height="205"  />
-<img src="https://i.imgur.com/a2YxyUO.png" width="333" height="205"  />
+<img src="https://i.imgur.com/xuNwBBZ.png" />
+<img src="https://i.imgur.com/vI9w4E3.png" />
+<img src="https://i.imgur.com/a2YxyUO.png" />
 
 ## Project Objectives
 
