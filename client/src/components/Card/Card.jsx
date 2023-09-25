@@ -1,9 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import "./Card.css";
-// import poketest from "../../info";
 import { useDispatch } from "react-redux";
-import { getDetailsbyId } from "../../actions";
+import { getDetailsbyId } from "../../redux/slices/pokemonThunk";
 
 export const DivCard = styled.div`
   background-color: rgba(255, 255, 255, 0.8);
@@ -89,7 +88,7 @@ function Card(props) {
   const dispatch = useDispatch()
 
   return (
-    <DivCard className="test_media_card" onClick={() => {dispatch(getDetailsbyId(props.id))}}>
+    <DivCard className="test_media_card" onClick={() => dispatch(getDetailsbyId(props.id))}>
       <div id="aaa">
         <span>{`${props.name[0].toUpperCase()}${props.name.slice(1)}`}</span>
         {props.types.length > 1 ? (

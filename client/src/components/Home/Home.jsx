@@ -1,9 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getFilterPaginado, getPokemons, filtradoAlt, filtradoAtt, filtradoName, filtradoCreados, filtradoOriginales, filtradoTipo } from "../../actions";
 import Card from "../Card/Card";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { getPokemones } from "../../redux/slices/pokemonThunk";
+import {
+  filtradoAtt,
+  filtradoName,
+  filtradoOrigen,
+  filtradoTipo,
+} from "../../redux/slices/pokemonSlice";
 import "./Home.css";
 
 export const DivXl = styled.div`
@@ -230,7 +236,7 @@ export const MainTipos = styled.div`
 
 const ITEMS_PAGINA = 12;
 
-function Home(props) {
+function Home() {
   const options = [
     { value: "", text: "-- Ordenar por tipo --" },
     { value: "normal", text: "normal" },
@@ -256,108 +262,51 @@ function Home(props) {
   ];
 
   const dispatch = useDispatch();
-  let [selected, setSelected] = useState(options[0].value);
+  let [tipo, setTipo] = useState(options[0].value);
   let [selName, setName] = useState("-- Orden por Nombre --");
   let [selAtt, setAtt] = useState("-- Orden por Attaque --");
   let [selOri, setOri] = useState("-- Orden por Origen --");
 
-  let [filterCreados, setFilterCreados] = useState(false);
-  let [filterOriginales, setFilterOriginales] = useState(false);
-
   const [items, setItems] = useState([]);
-  const [currentPage, setCurrentPage] = useState(0);
+  const [page, setPage] = useState(1);
 
-  let pokemones = useSelector((state) => state.pokemones);
-  let asdf = useSelector((state) => state.filtrado);
-  let poke_originales = pokemones.filter((p) => typeof p.id === "number");
-  let creados = pokemones.filter((p) => typeof p.id !== "number");
-  let detalle = useSelector((state) => state.pokemon_detail);
+  let { pokemones, filtrado, pokemon_detail: detalle } = useSelector(
+    (state) => state.pokemon
+  );
+
+  const handleChange = (event) => {
+    setTipo(event.target.value);
+    dispatch(filtradoTipo(event.target.value));
+  };
+
+  const prevPage = () => {
+    if (page === 1) return;
+    const previousPage = page - 2
+    const currentPage = page - 1
+    setItems(
+      filtrado.slice(previousPage * ITEMS_PAGINA, currentPage * ITEMS_PAGINA)
+    );
+    setPage(page - 1);
+  };
+
+  const nextPage = () => {
+    const maxPage = Math.ceil(filtrado.length / ITEMS_PAGINA)
+    if (page === maxPage) return
+    const nextPage = page + 1;
+    setItems(
+      filtrado.slice(page * ITEMS_PAGINA, nextPage * ITEMS_PAGINA)
+    );
+    setPage(page + 1);
+  };
 
   useEffect(() => {
-    dispatch(getPokemons());
+    dispatch(getPokemones());
   }, []);
 
   useEffect(() => {
-    setItems([...asdf].splice(0, ITEMS_PAGINA))
-  }, [asdf]);
+    setItems([...filtrado].splice(0, ITEMS_PAGINA));
+  }, [filtrado]);
 
-
-  const nextHandler = () => {
-    let lista = [...asdf];
-    if (lista.length === 0 && !filterCreados && !filterOriginales)
-      lista = [...pokemones];
-    if (lista.length === 0 && filterOriginales) lista = [...poke_originales];
-    if (lista.length === 0 && filterCreados) lista = [...creados];
-
-    let total_elementos = lista.length;
-    let nextPage = currentPage + 1;
-    let firstIndex = nextPage * ITEMS_PAGINA;
-    if (firstIndex + 1 > total_elementos) return;
-
-    setItems([...lista].splice(firstIndex, ITEMS_PAGINA));
-    setCurrentPage(nextPage);
-  };
-
-  const prevHandler = () => {
-    let lista = [...asdf];
-    if (lista.length === 0 && !filterCreados && !filterOriginales)
-      lista = [...pokemones];
-    if (lista.length === 0 && filterOriginales) lista = [...poke_originales];
-    if (lista.length === 0 && filterCreados) lista = [...creados];
-
-    const prevPage = currentPage - 1;
-    if (prevPage < 0) return;
-
-    const firstIndex = prevPage * ITEMS_PAGINA;
-    setItems([...lista].splice(firstIndex, ITEMS_PAGINA));
-    setCurrentPage(prevPage);
-  };
-
-  const handleChange = (event) => {
-    setSelected(event.target.value);
-    dispatch(filtradoTipo(event.target.value))
-  };
-
-  const sortByName = (reverse, tipo) => {
-    dispatch(filtradoName(reverse, tipo))
-    setCurrentPage(0);
-  };
-
-  const sortByAttack = (reverse, tipo) => {
-    dispatch(filtradoAtt(reverse, tipo));
-    setCurrentPage(0);
-  };
-
-  const filtroAltura = () => {
-    dispatch(filtradoAlt())
-    setCurrentPage(0)
-    console.log(asdf)
-
-  }
-
-  const sortOriginals = (tipo) => {
-    setFilterOriginales(true);
-    setFilterCreados(false);
-    dispatch(filtradoOriginales(tipo));
-    setCurrentPage(0);
-  };
-
-  const sortCreated = (tipo) => {
-    setFilterOriginales(false);
-    setFilterCreados(true);
-    dispatch(filtradoCreados(tipo));
-    setCurrentPage(0);
-  };
-
-  const sortTodos = () => {
-    setFilterOriginales(false);
-    setFilterCreados(false);
-    let lista = [...pokemones];
-
-    dispatch(getFilterPaginado([]));
-    setItems([...lista].splice(0, ITEMS_PAGINA));
-    setCurrentPage(0);
-  };
 
   return (
     <>
@@ -368,9 +317,8 @@ function Home(props) {
             value={selName}
             onChange={(e) => {
               setName(e.target.value);
-              console.log(asdf)
-              if (e.target.value === "ascendente") sortByName(false, selected);
-              if (e.target.value === "descendente") sortByName(true, selected);
+              if (e.target.value === "ascendente") dispatch(filtradoName(false));
+              if (e.target.value === "descendente") dispatch(filtradoName(true));
             }}
           >
             <option value="">-- Orden por Nombre --</option>
@@ -383,10 +331,9 @@ function Home(props) {
             value={selAtt}
             onChange={(e) => {
               setAtt(e.target.value);
-              console.log(asdf)
 
-              if (e.target.value === "ascendente") sortByAttack(false, selected);
-              if (e.target.value === "descendente") sortByAttack(true, selected);
+              if (e.target.value === "ascendente") dispatch(filtradoAtt(false));
+              if (e.target.value === "descendente") dispatch(filtradoAtt(true))
             }}
           >
             <option value="">-- Orden por Ataque --</option>
@@ -396,7 +343,7 @@ function Home(props) {
 
           <select
             className="selec_general"
-            value={selected}
+            value={tipo}
             onChange={handleChange}
           >
             {options.map((opt) => (
@@ -411,9 +358,9 @@ function Home(props) {
             value={selOri}
             onChange={(e) => {
               setOri(e.target.value);
-              if (e.target.value === "originales") sortOriginals(selected);
-              if (e.target.value === "creados") sortCreated(selected);
-              if (e.target.value === "todos") sortTodos();
+              if (e.target.value === "originales") dispatch(filtradoOrigen("originales"))
+              if (e.target.value === "creados") dispatch(filtradoOrigen("creados"))
+              if (e.target.value === "todos") dispatch(filtradoOrigen())
             }}
           >
             <option value="">-- Orden por Origen --</option>
@@ -421,12 +368,9 @@ function Home(props) {
             <option value="originales">Originales</option>
             <option value="creados">Creados</option>
           </select>
-
-          <button onClick={() => filtroAltura()}>X</button>
-
         </DivFilters>
         <DivButton>
-          <button className="pageButton" onClick={prevHandler}>
+          <button className="pageButton" onClick={prevPage}>
             ANTERIOR
           </button>
           <button
@@ -435,16 +379,20 @@ function Home(props) {
           >
             INICIO
           </button>
-          <button className="pageButton" onClick={nextHandler}>
+          <button className="pageButton" onClick={nextPage}>
             SIGUIENTE
           </button>
         </DivButton>
       </div>
       <div id="try">
         <DivXl>
-          {pokemones.length === 0 ? (
+          {!pokemones.length ? (
             <>
-              <img id="cargando" src="https://c.tenor.com/On7kvXhzml4AAAAi/loading-gif.gif" alt="" />
+              <img
+                id="cargando"
+                src="https://c.tenor.com/On7kvXhzml4AAAAi/loading-gif.gif"
+                alt=""
+              />
               <div id="div_load">
                 <img
                   src="https://weichiachang.github.io/pokemon-master/img/loading.45600eb9.gif"
@@ -453,9 +401,7 @@ function Home(props) {
                 />
               </div>
             </>
-          ) : items.length === 0 && selected === "" ? (
-            setItems([...pokemones].splice(0, ITEMS_PAGINA))
-          ) : items.length === 0 && selected !== "" ? null : (
+          ) : (
             items.map((pokemon, index) => {
               return (
                 <Card
@@ -469,7 +415,6 @@ function Home(props) {
                   attack={pokemon.attack}
                   types={pokemon.types}
                   id={pokemon.id}
-                  // base_exp={pokemon['base_exp']}
                 />
               );
             })

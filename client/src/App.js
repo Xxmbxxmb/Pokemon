@@ -9,7 +9,7 @@ import Landing from "./components/Landing/Landing";
 
 function App() {
   return (
-    <React.Fragment>
+    <>
       <Switch>
         <Route exact path="/" component={Landing} />
         <Route path="/" component={Search} />
@@ -17,7 +17,7 @@ function App() {
         <Route exact path="/home" component={Home} />
         <Route exact path="/pokemon/:id" component={PokemonDetail} />
         <Route exact path="/crear" component={Create} />
-    </React.Fragment>
+    </>
   );
 }
 

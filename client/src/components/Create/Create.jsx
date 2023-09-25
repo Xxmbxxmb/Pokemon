@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { addPokemon } from "../../actions";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import BackButton from '../BackButton/Back';
+import { addPokemon } from "../../redux/slices/pokemonThunk";
 
 const InputForm = styled.form`
   display: grid;

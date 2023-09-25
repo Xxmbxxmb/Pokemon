@@ -10,11 +10,6 @@ module.exports = (sequelize) => {
       defaultValue: DataTypes.UUIDV4,
       primaryKey: true
     },
-    // idx: {
-    //   type: DataTypes.INTEGER,
-    //   primaryKey: true,
-    //   autoIncrement: true,
-    // },
     nombre: {
       type: DataTypes.STRING,
       allowNull: false,

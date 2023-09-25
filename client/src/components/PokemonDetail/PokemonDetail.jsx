@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
-import { getDetailsbyDB, getDetailsbyId } from "../../actions";
 import './PokemonDetail.css';
 import Back from "../BackButton/Back";
+import { getDetailsbyId } from "../../redux/slices/pokemonThunk";
 
 export const Contenedor = styled.div`
   background-color: rgba(255, 255, 255, 0.8);
@@ -112,12 +112,11 @@ export const MainTipos = styled.div`
 
 function PokemonDetail(props) {
   const dispatch = useDispatch();
-  const pokemon_detail = useSelector((state) => state.pokemon_detail);
+  const pokemon_detail = useSelector((state) => state.pokemon.pokemon_detail);
 
   useEffect(() => {
     const id = props.match.params.id;
-    if(id.length > 8) dispatch(getDetailsbyId(id));
-    else dispatch(getDetailsbyDB(id))
+    dispatch(getDetailsbyId(id));
   }, [dispatch, props.match.params.id]);
 
   

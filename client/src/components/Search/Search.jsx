@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 import styled from "styled-components";
 import "./Search.css";
+import { setPokemonDetail } from "../../redux/slices/pokemonSlice";
 
 export const NavBar = styled.div`
   background-color: transparent;
@@ -88,18 +89,19 @@ export const ImgCrear = styled.img`
   }
 `;
 
-function Search(props) {
+function Search() {
   const history = useHistory();
-  let pokemones = useSelector((state) => state.pokemones);
+  let pokemones = useSelector((state) => state.pokemon.pokemones);
 
   const [input, setInput] = useState("");
 
   const onFilter = (nombre) => {
-    let pokemon_buscado = pokemones.filter(
+    let pokemon_buscado = pokemones.find(
       (p) => p.nombre.toLowerCase() === nombre.toLowerCase()
     );
-    if (pokemon_buscado.length > 0) {
-      let id = pokemon_buscado[0].id;
+    if (pokemon_buscado) {
+      let id = pokemon_buscado.id;
+      setPokemonDetail(pokemon_buscado)
       history.push(`/pokemon/${id}`);
     } else {
       history.push("/");
